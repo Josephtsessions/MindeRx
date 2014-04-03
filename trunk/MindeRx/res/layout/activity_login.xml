@@ -7,14 +7,17 @@
     android:addStatesFromChildren="false"
     android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/login_button"
+    <EditText
+        android:id="@+id/username_txt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/password_txt"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="42dp"
-        android:text="Submit" />
+        android:layout_alignBottom="@+id/password_txt"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="58dp"
+        android:background="#3300FF"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:singleLine="false" />
 
     <EditText
         android:id="@+id/password_txt"
@@ -22,22 +25,24 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="194dp"
+        android:layout_marginTop="192dp"
+        android:background="#3300FF"
         android:ems="10"
         android:inputType="textPersonName|textPassword"
-        android:singleLine="false" />
-
-    <EditText
-        android:id="@+id/username_txt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/password_txt"
-        android:layout_marginBottom="78dp"
-        android:ems="10"
-        android:inputType="textPersonName"
         android:singleLine="false" >
 
         <requestFocus />
     </EditText>
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/username_txt"
+        android:layout_marginTop="42dp"
+        android:background="#3300FF"
+        android:text="Submit"
+        android:textStyle="bold" />
 
 </RelativeLayout>
