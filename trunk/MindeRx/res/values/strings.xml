@@ -4,5 +4,7 @@
     <string name="app_name">MindeRx</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="Manage Patients">Manage Patients</string>
+    <string />
 
 </resources>
