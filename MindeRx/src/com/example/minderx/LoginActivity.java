@@ -15,40 +15,25 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-/**
- * An example full-screen activity that shows and hides the system UI (i.e.
- * status bar and navigation/system bar) with user interaction.
- * 
- * @see SystemUiHider
- */
 public class LoginActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
 		setContentView(R.layout.x_activity_login_relink_javafile_and_delete);
 
-		if( in_connection_range() )
-			start_login_listner();
-		}
+		setupListeners();
+	}
 
-
-	/**
-	 * The app checks to see if it is in range of the Hospitial
-	 */
-
-	private boolean in_connection_range(){
-		return true;
-		}
-
-	private boolean is_authenticated(String password){
+	private boolean validLogin(String username, String password){
 		return password.equals("o");
-		}
+	}
 
-	private void start_login_listner(){
+	private void setupListeners(){
 		final Button btnLogin =  (Button) this.findViewById(R.id.login_button);
-		final EditText edtLogin = (EditText) this.findViewById(R.id.password_txt);
+		final EditText usernameField = (EditText) this.findViewById(R.id.username_txt);
+		final EditText passwordField = (EditText) this.findViewById(R.id.password_txt);
+		
 		btnLogin.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -58,19 +43,18 @@ public class LoginActivity extends Activity {
 	            imm.hideSoftInputFromWindow(btnLogin.getWindowToken(), 
 	                                      InputMethodManager.RESULT_UNCHANGED_SHOWN);
 				
-				String password = edtLogin.getText().toString();
+	            String username = usernameField.getText().toString();
+				String password = passwordField.getText().toString();
 
-				if(is_authenticated(password)) {
+				if (validLogin(username, password)) {
 					Intent patientListActivity = new Intent(v.getContext(), PatientListActivity.class);
 					startActivityForResult(patientListActivity, 0);
-					}
-				else
-				  Toast.makeText(v.getContext(), "Login Failed", Toast.LENGTH_LONG).show();
-
-				// finish(); // on back, app will close, maybe consider saveing state, and running in background (in top bar?)
+				} else {
+					Toast.makeText(v.getContext(), "Login Failed", Toast.LENGTH_LONG).show();
 				}
-			});			
-		}
+			}
+		});		
 	
-
 	}
+
+}
