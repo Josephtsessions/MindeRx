@@ -23,9 +23,9 @@
 	        android:editable="false"
 	        android:ems="10"
 	        android:textColor="#666666"
-	        android:hint="Username"
+	        android:hint="@string/Username"
 	        android:inputType="textPersonName"
-	        android:singleLine="false" />android:configChanges="orientation|keyboardHidden
+	        android:singleLine="false" />
 	
 	    <EditText
 	        android:id="@+id/password_txt"
@@ -38,7 +38,7 @@
 	        android:background="#eeeeee"
 	        android:ems="10"
 	        android:textColor="#666666"
-	        android:hint="Pass****"
+	        android:hint="@string/Pass****"
 	        android:inputType="textPassword"
 	        android:singleLine="false" />
 	    
@@ -51,7 +51,7 @@
 	        android:layout_marginTop="280dp"
 	        android:layout_marginLeft="50dp"
 	        android:background="#eeeeee"
-	        android:text="Submit"
+	        android:text="@string/Submit"
 	        android:textColor="#666666"
 	        android:textStyle="bold" />
 
@@ -88,7 +88,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:fontFamily="sans-serif-light"
-            android:text="login_progress_signi"
+            android:text="@string/login_progress_signi"
             android:textAppearance="?android:attr/textAppearanceMedium" />
     </LinearLayout>
 
