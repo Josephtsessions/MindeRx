@@ -18,7 +18,7 @@ public class PatientListActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		setContentView(R.layout.activity_patient_list);
+		setContentView(R.layout.x_activity_patient_list_relink);
 
 		register_btnListener(R.id.ManagePatient_bn, VitalsActivity.class);	
 

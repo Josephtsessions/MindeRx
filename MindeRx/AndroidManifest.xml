@@ -85,6 +85,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.minderx.VitalsActivity" />
         </activity>
+        <activity
+            android:name="com.example.minderx.Temp_Activity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_temp_"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
     </application>
 
 </manifest>
