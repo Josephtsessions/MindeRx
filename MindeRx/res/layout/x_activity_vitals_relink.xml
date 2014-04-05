@@ -1,0 +1,69 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#888888"
+    tools:context="com.example.minderx.VitalsActivity" >
+
+    <!--
+         The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc.
+    -->
+
+
+<Button
+	        android:id="@+id/blood_pressure_bn"
+	        android:layout_width="270dp"
+	        android:layout_height="35dp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_below="@+id/password_txt"
+	        android:layout_marginTop="140dp"
+	        android:layout_marginLeft="25dp"
+	        android:background="#eeeeee"
+	        android:text="Blood Pressure"
+	        android:textColor="#666666"
+	        android:textStyle="bold" />
+
+	    <Button
+	        android:id="@+id/heart_rate_bn"
+	        android:layout_width="270dp"
+	        android:layout_height="35dp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_below="@+id/password_txt"
+	        android:layout_marginTop="200dp"
+	        android:layout_marginLeft="25dp"
+	        android:background="#eeeeee"
+	        android:text="Heart Rate"
+	        android:textColor="#666666"
+	        android:textStyle="bold" />
+
+	    <Button
+	        android:id="@+id/o2_sat_lvl_bn"
+	        android:layout_width="270dp"
+	        android:layout_height="35dp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_below="@+id/password_txt"
+	        android:layout_marginTop="260dp"
+	        android:layout_marginLeft="25dp"
+	        android:background="#eeeeee"
+	        android:text="O2 Sat. Levels"
+	        android:textColor="#666666"
+	        android:textStyle="bold" />
+
+	    <Button
+	        android:id="@+id/temperature_bn"
+	        android:layout_width="270dp"
+	        android:layout_height="35dp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_below="@+id/password_txt"
+	        android:layout_marginTop="320dp"
+	        android:layout_marginLeft="25dp"
+	        android:background="#eeeeee"
+	        android:text="Temperature"
+	        android:textColor="#666666"
+	        android:textStyle="bold" />
+
+
+
+</FrameLayout>
