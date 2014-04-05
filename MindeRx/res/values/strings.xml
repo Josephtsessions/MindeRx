@@ -16,8 +16,10 @@
     <string name="resp">Resp</string>
     <string name="i_o">I/O</string>
     <string name="temp">Temp</string>
+    <string name ="temperature">Temperature</string>
     <string name="blood_pressure">Blood Pressure</string>
     <string name="heart_rate">Heart Rate</string>
+    <string name="o2_stat_lvls">O2 Sat. Levels</string>
     <string name="activity_graph_patient_info">Graph Patient Info</string>
     <string name="title_activity_vitals">VitalsActivity</string>
     <string name="title_activity_patient_vitals">PatientVitals</string>
@@ -30,5 +32,8 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_patient_list">PatientListActivity</string>
     <string name="title_activity_temp_">Temp_Activity</string>
+    <string name="hint_txt_password">Pass****</string>
+    <string name="hint_txt_username">Username</string>
+    <string name="login_progress_signi">login_progress_signi</string>
 
 </resources>
