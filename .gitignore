@@ -1,5 +1,16 @@
 $ cat .gitignore
 
+# Ignore app files
+*.apk
+*.ap_
+
 # Ignore compiled Java class files
 *.class
 *.vpp~*
+
+# Generated files
+bin/
+gen/
+
+# Local Configuration file
+local.properties
