@@ -23,8 +23,8 @@
 	        android:editable="false"
 	        android:ems="10"
 	        android:textColor="#666666"
-	        android:hint="@string/Username"
 	        android:inputType="textPersonName"
+	        android:hint="Username"
 	        android:singleLine="false" />
 	
 	    <EditText
@@ -38,8 +38,8 @@
 	        android:background="#eeeeee"
 	        android:ems="10"
 	        android:textColor="#666666"
-	        android:hint="@string/Pass****"
 	        android:inputType="textPassword"
+	        android:hint="Pass****"
 	        android:singleLine="false" />
 	    
 	    <Button
@@ -51,7 +51,7 @@
 	        android:layout_marginTop="280dp"
 	        android:layout_marginLeft="50dp"
 	        android:background="#eeeeee"
-	        android:text="@string/Submit"
+	        android:text="Submit"
 	        android:textColor="#666666"
 	        android:textStyle="bold" />
 
@@ -88,7 +88,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:fontFamily="sans-serif-light"
-            android:text="@string/login_progress_signi"
+            android:text="login_progress_signi"
             android:textAppearance="?android:attr/textAppearanceMedium" />
     </LinearLayout>
 
