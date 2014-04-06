@@ -27,7 +27,7 @@ public class PatientInfoActivity extends Activity {
 
 	}
 
-	private void setupListeners(int rID, final Class activity) {
+	private void setupListeners(int rID, final Class<?> activity) {
 		final Button b = (Button) this.findViewById(rID);
 		b.setOnClickListener(new View.OnClickListener() {
 

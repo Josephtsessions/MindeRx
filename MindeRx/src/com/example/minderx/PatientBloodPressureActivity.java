@@ -51,7 +51,7 @@ public class PatientBloodPressureActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		setContentView(R.layout.activity_patient_blood_pressure);
+		setContentView(R.layout.x_activity_patient_blood_pressure_relink);
 		setupActionBar();
 
 		final View controlsView = findViewById(R.id.fullscreen_content_controls);

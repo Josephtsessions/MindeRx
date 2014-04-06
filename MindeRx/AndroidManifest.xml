@@ -50,7 +50,7 @@
             android:theme="@style/FullscreenTheme" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.minderx.VitalsActivity" />
+                android:value="com.example.minderx.PatientInfoActivity" />
         </activity>
         <activity
             android:name="com.example.minderx.PatientHeartRateActivity"
@@ -60,7 +60,7 @@
             android:theme="@style/FullscreenTheme" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.minderx.VitalsActivity" />
+                android:value="com.example.minderx.PatientInfoActivity" />
         </activity>
         <activity
             android:name="com.example.minderx.PatientSaLevelActivity"
@@ -70,7 +70,7 @@
             android:theme="@style/FullscreenTheme" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.minderx.VitalsActivity" />
+                android:value="com.example.minderx.PatientInfoActivity" />
         </activity>
         <activity
             android:name="com.example.minderx.PatientTemperatureActivity"
@@ -80,13 +80,7 @@
             android:theme="@style/FullscreenTheme" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.minderx.VitalsActivity" />
-        </activity>
-        <activity
-            android:name="com.example.minderx.Temp_Activity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_temp_"
-            android:theme="@style/FullscreenTheme" >
+                android:value="com.example.minderx.PatientInfoActivity" />
         </activity>
     </application>
 
