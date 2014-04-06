@@ -12,7 +12,7 @@ import android.widget.Button;
  * 
  * @see SystemUiHider
  */
-public class VitalsActivity extends Activity {
+public class PatientInfoActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -20,26 +20,26 @@ public class VitalsActivity extends Activity {
 
 		setContentView(R.layout.x_activity_vitals_relink);
 
-		register_btnListener(R.id.blood_pressure_bn, PatientBloodPressureActivity.class);
-		register_btnListener(R.id.heart_rate_bn    , PatientHeartRateActivity.class);
-		register_btnListener(R.id.o2_sat_lvl_bn    , PatientSaLevelActivity.class);
-		register_btnListener(R.id.temperature_bn   , PatientTemperatureActivity.class);	
+		setupListeners(R.id.blood_pressure_bn, PatientBloodPressureActivity.class);
+		setupListeners(R.id.heart_rate_bn    , PatientHeartRateActivity.class);
+		setupListeners(R.id.o2_sat_lvl_bn    , PatientSaLevelActivity.class);
+		setupListeners(R.id.temperature_bn   , PatientTemperatureActivity.class);	
 
-		}
+	}
 
-	  private void register_btnListener(int rID, final Class activity){
+	private void setupListeners(int rID, final Class activity) {
 		final Button b = (Button) this.findViewById(rID);
 		b.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				
-				Intent ntent = new Intent(v.getContext(), activity);
-				startActivityForResult(ntent, 0);
+				Intent intent = new Intent(v.getContext(), activity);
+				startActivityForResult(intent, 0);
 	
-				}
-			});	
-	  	}
-	
+			}
+		});	
 	}
+	
+}
 

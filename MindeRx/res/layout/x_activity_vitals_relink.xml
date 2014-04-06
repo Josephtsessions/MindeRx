@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#888888"
-    tools:context="com.example.minderx.VitalsActivity" >
+    tools:context="com.example.minderx.PatientInfoActivity" >
 
     <!--
          The primary full-screen view. This can be replaced with whatever view

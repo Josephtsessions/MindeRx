@@ -29,7 +29,7 @@ public class LoginActivity extends Activity {
 		return password.equals("o");
 	}
 
-	private void setupListeners(){
+	private void setupListeners() {
 		final Button btnLogin =  (Button) this.findViewById(R.id.login_button);
 		final EditText usernameField = (EditText) this.findViewById(R.id.username_txt);
 		final EditText passwordField = (EditText) this.findViewById(R.id.password_txt);

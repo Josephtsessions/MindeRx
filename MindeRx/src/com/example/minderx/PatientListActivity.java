@@ -6,11 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-/**
- * An example full-screen activity that shows and hides the system UI (i.e.
- * status bar and navigation/system bar) with user interaction.
- * 
- */
 public class PatientListActivity extends Activity {
 
 
@@ -20,21 +15,21 @@ public class PatientListActivity extends Activity {
 
 		setContentView(R.layout.x_activity_patient_list_relink);
 
-		register_btnListener(R.id.ManagePatient_bn, VitalsActivity.class);	
+		setupListeners();	
 
 		}
 
-	  private void register_btnListener(int rID, final Class activity){
-		final Button b = (Button) this.findViewById(rID);
-		b.setOnClickListener(new View.OnClickListener() {
+	private void setupListeners() {
+		final Button manageButton = (Button) this.findViewById(R.id.ManagePatient_bn);
+		manageButton.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 
-				Intent ntent = new Intent(v.getContext(), activity);
-				startActivityForResult(ntent, 0);
+				Intent intent = new Intent(v.getContext(), PatientInfoActivity.class);
+				startActivityForResult(intent, 0);
 
-				}
-			});	
-	  	}
+			}
+		});	
 	}
+}
