@@ -51,7 +51,7 @@ public class PatientSaLevelActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		setContentView(R.layout.activity_patient_sa_level);
+		setContentView(R.layout.x_activity_patient_sa_level_relink);
 		setupActionBar();
 
 		final View controlsView = findViewById(R.id.fullscreen_content_controls);
