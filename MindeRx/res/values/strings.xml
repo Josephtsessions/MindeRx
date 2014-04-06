@@ -21,7 +21,7 @@
     <string name="heart_rate">Heart Rate</string>
     <string name="o2_stat_lvls">O2 Sat. Levels</string>
     <string name="activity_graph_patient_info">Graph Patient Info</string>
-    <string name="title_activity_vitals">VitalsActivity</string>
+    <string name="title_activity_vitals">PatientInfoActivity</string>
     <string name="title_activity_patient_vitals">PatientVitals</string>
     <string name="title_activity_patient_temperature">PatientTemperatureActivity</string>
     <string name="title_activity_patient_sa_level">PatientSaLevelActivity</string>
