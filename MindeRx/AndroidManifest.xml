@@ -90,6 +90,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.minderx.ABlankSecondMainActivity"
+            android:label="@string/title_activity_ablank_second_main" >
+        </activity>
     </application>
 
 </manifest>

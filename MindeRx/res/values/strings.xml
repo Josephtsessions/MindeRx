@@ -36,5 +36,6 @@
     <string name="hint_txt_username">Username</string>
     <string name="login_progress_signi">login_progress_signi</string>
     <string name="title_activity_ablank_launcher">ABlankLauncherActivity</string>
+    <string name="title_activity_ablank_second_main">ABlankSecondMainActivity</string>
 
 </resources>
