@@ -12,5 +12,8 @@ $ cat .gitignore
 bin/
 gen/
 
+# Unignore critical files
+!/deps/*/bin/*.jar
+
 # Local Configuration file
 local.properties
