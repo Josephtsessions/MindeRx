@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#888888" >
+    android:background="#888888" 
+    android:orientation="vertical"
+    android:gravity="center">
 
     <ListView
         android:id="@+id/patients_listView"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="17dp"
+        android:layout_marginBottom="32dp"
         android:configChanges="orientation|keyboardHidden" >
-
     </ListView>
 
     <Button
         android:id="@+id/ManagePatient_bn"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginBottom="18dp"
         android:text="@string/manage_patients" />
 
-</RelativeLayout>
+</LinearLayout>
