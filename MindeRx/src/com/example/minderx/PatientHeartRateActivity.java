@@ -14,6 +14,7 @@ import android.view.View;
  * @see SystemUiHider
  */
 public class PatientHeartRateActivity extends VitalsActivity {
+	//from Ken, just want to test push
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
