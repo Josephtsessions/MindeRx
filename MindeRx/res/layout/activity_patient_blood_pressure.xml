@@ -1,100 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center_horizontal"
-    android:background="#7e7e7e" >
+    tools:context="com.example.minderx.PatientBloodPressureActivity"
+    tools:ignore="MergeRootFrame" >
 
-    <EditText
-        android:id="@+id/Patient_Name_txt"
+    <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textColor="#3300FF" >
-
-        <requestFocus />
-    </EditText>
-
-    <EditText
-        android:id="@+id/SaO2_Level"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/Patient_Name_txt"
-        android:layout_marginTop="24dp"
-        android:ems="10"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="77dp"
         android:text="@string/blood_pressure"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp" />
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
-        android:id="@+id/time_txt"
+        android:id="@+id/systolicField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/date_txt"
-        android:layout_below="@+id/date_txt"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:inputType="time"
-        android:text="@string/dummy_time" />
-
-    <EditText
-        android:id="@+id/date_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/SaO2_Level"
-        android:layout_below="@+id/SaO2_Level"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:inputType="date"
-        android:text="@string/dummy_date" />
-
-    <Button
-        android:id="@+id/submit_bn"
-        android:layout_width="125dp"
-        android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/SaO2_Level"
-        android:layout_marginBottom="16dp"
-        android:background="#3300FF"
-        android:text="@string/submit"
-        android:textSize="25sp" />
-
-    <Button
-        android:id="@+id/cancel_bn"
-        android:layout_width="125dp"
-        android:layout_height="40dp"
-        android:layout_alignBottom="@+id/submit_bn"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="22dp"
-        android:background="#FF0000"
-        android:text="@string/cancel"
-        android:textSize="25sp" />
-
-    <EditText
-        android:id="@+id/Systolic_Num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/time_txt"
-        android:layout_below="@+id/time_txt"
-        android:layout_marginTop="43dp"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="52dp"
         android:ems="10"
         android:inputType="number"
         android:text="@string/systolic_number" />
 
     <EditText
-        android:id="@+id/Diastolic_Num"
+        android:id="@+id/diastolicField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/Systolic_Num"
-        android:layout_below="@+id/Systolic_Num"
-        android:layout_marginTop="25dp"
+        android:layout_alignLeft="@+id/systolicField"
+        android:layout_centerVertical="true"
         android:ems="10"
         android:inputType="number"
         android:text="@string/diastolic_number" />
 
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/diastolicField"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="46dp"
+        android:text="@string/submit" />
+
 </RelativeLayout>
+

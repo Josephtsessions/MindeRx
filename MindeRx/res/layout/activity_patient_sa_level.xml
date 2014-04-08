@@ -67,15 +67,15 @@
         android:id="@+id/Temperature_Num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText1"
-        android:layout_below="@+id/editText1"
+        android:layout_alignLeft="@+id/systolicField"
+        android:layout_below="@+id/systolicField"
         android:layout_marginTop="31dp"
         android:ems="10"
         android:inputType="number"
         android:text="@string/o2_stat_lvls" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/systolicField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/date_txt"

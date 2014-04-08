@@ -46,7 +46,7 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_patient_blood_pressure"
             android:parentActivityName="com.example.minderx.PatientInfoActivity"
-            android:theme="@style/FullscreenTheme" >
+            android:theme="@style/Theme.AppCompat" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.minderx.PatientInfoActivity" />
