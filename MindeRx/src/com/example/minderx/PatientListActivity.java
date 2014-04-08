@@ -30,7 +30,6 @@ public class PatientListActivity extends Activity {
 		patients.add("Michael Jackson");
 		patients.add("Billy Mays");
 		patients.add("Steve Jobs");
-		patients.add("SomeoneWhoisn'tDead");
 		
 		// Adapters are used to populate ListViews in Android
 		ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, patients);
