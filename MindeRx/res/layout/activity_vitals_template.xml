@@ -18,43 +18,24 @@
         <requestFocus />
     </EditText>
 
-    <inputType
-        android:id="@+id/vitals_template_txt"
+    <EditText
+        android:id="@+id/Tempature"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/Patient_Name_txt"
         android:layout_marginTop="24dp"
         android:ems="10"
-        android:textColor="#FFFFFF" />
-
-    <EditText
-        android:id="@+id/time_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/date_txt"
-        android:layout_below="@+id/date_txt"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:inputType="time" />
-
-    <EditText
-        android:id="@+id/date_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/vitals_template_txt"
-        android:layout_below="@+id/vitals_template_txt"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:inputType="date" />
+        android:text="@string/temperature"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/submit_bn"
         android:layout_width="125dp"
         android:layout_height="40dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/vitals_template_txt"
+        android:layout_alignRight="@+id/Tempature"
         android:layout_marginBottom="16dp"
         android:background="#3300FF"
         android:text="@string/submit"
@@ -70,5 +51,37 @@
         android:background="#FF0000"
         android:text="@string/cancel"
         android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/date_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Tempature"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
+        android:ems="10"
+        android:inputType="date"
+        android:text="@string/dummy_date" />
+
+    <EditText
+        android:id="@+id/Temperature_Num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText1"
+        android:layout_below="@+id/editText1"
+        android:layout_marginTop="31dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="@string/temperature" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/date_txt"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:inputType="time"
+        android:text="@string/dummy_time" />
 
 </RelativeLayout>
