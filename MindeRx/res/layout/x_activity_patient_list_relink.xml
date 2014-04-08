@@ -4,38 +4,15 @@
     android:layout_height="match_parent"
     android:background="#888888" >
 
-    
     <ListView
-        android:configChanges="orientation|keyboardHidden"
         android:id="@+id/patients_listView"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/logout_bn"
-        android:layout_marginTop="17dp" >
+        android:layout_marginTop="17dp"
+        android:configChanges="orientation|keyboardHidden" >
 
     </ListView>
-
-    <Button
-        android:id="@+id/logout_bn"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:background="#3300FF"
-        android:text="@string/log_out" />
-
-    <EditText
-        android:configChanges="orientation|keyboardHidden"
-        android:id="@+id/PatientName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/PatientName"
-        android:layout_alignParentLeft="true"
-        android:ems="10"
-        android:inputType="textPersonName" >
-
-    </EditText>
 
     <Button
         android:id="@+id/ManagePatient_bn"
