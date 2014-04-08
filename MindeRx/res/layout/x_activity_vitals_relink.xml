@@ -1,4 +1,4 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,41 +11,13 @@
          TextureView, etc.
     -->
 
-
-<Button
-	        android:id="@+id/blood_pressure_bn"
-	        android:text="@string/blood_pressure"
-	        android:layout_width="270dp"
-	        android:layout_height="35dp"
-	        android:layout_alignParentLeft="true"
-	        android:layout_below="@+id/password_txt"
-	        android:layout_marginTop="140dp"
-	        android:layout_marginLeft="25dp"
-	        android:background="#eeeeee"
-	        android:textColor="#666666"
-	        android:textStyle="bold" />
-
-	    <Button
-	        android:id="@+id/heart_rate_bn"
-	        android:text="@string/heart_rate"
-	        android:layout_width="270dp"
-	        android:layout_height="35dp"
-	        android:layout_alignParentLeft="true"
-	        android:layout_below="@+id/password_txt"
-	        android:layout_marginTop="200dp"
-	        android:layout_marginLeft="25dp"
-	        android:background="#eeeeee"
-	        android:textColor="#666666"
-	        android:textStyle="bold" />
-
 	    <Button
 	        android:id="@+id/o2_sat_lvl_bn"
 	        android:layout_width="270dp"
 	        android:layout_height="35dp"
-	        android:layout_alignParentLeft="true"
-	        android:layout_below="@+id/password_txt"
-	        android:layout_marginTop="260dp"
-	        android:layout_marginLeft="25dp"
+	        android:layout_alignLeft="@+id/temperature_bn"
+	        android:layout_below="@+id/heart_rate_bn"
+	        android:layout_marginTop="30dp"
 	        android:background="#eeeeee"
 	        android:text="@string/o2_stat_lvls"
 	        android:textColor="#666666"
@@ -55,15 +27,36 @@
 	        android:id="@+id/temperature_bn"
 	        android:layout_width="270dp"
 	        android:layout_height="35dp"
-	        android:layout_alignParentLeft="true"
-	        android:layout_below="@+id/password_txt"
-	        android:layout_marginTop="320dp"
-	        android:layout_marginLeft="25dp"
+	        android:layout_below="@+id/o2_sat_lvl_bn"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="28dp"
 	        android:background="#eeeeee"
 	        android:text="@string/temperature"
 	        android:textColor="#666666"
 	        android:textStyle="bold" />
 
+	    <Button
+	        android:id="@+id/blood_pressure_bn"
+	        android:layout_width="270dp"
+	        android:layout_height="35dp"
+	        android:layout_alignLeft="@+id/heart_rate_bn"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginTop="107dp"
+	        android:background="#eeeeee"
+	        android:text="@string/blood_pressure"
+	        android:textColor="#666666"
+	        android:textStyle="bold" />
 
+	    <Button
+	        android:id="@+id/heart_rate_bn"
+	        android:layout_width="270dp"
+	        android:layout_height="35dp"
+	        android:layout_alignLeft="@+id/o2_sat_lvl_bn"
+	        android:layout_below="@+id/blood_pressure_bn"
+	        android:layout_marginTop="28dp"
+	        android:background="#eeeeee"
+	        android:text="@string/heart_rate"
+	        android:textColor="#666666"
+	        android:textStyle="bold" />
 
-</FrameLayout>
+</RelativeLayout>
