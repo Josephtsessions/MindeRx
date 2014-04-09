@@ -24,8 +24,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="52dp"
         android:ems="10"
-        android:inputType="number"
-        android:text="@string/systolic_number" />
+        android:hint="systolic_number"
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/diastolicField"
@@ -34,8 +34,8 @@
         android:layout_alignLeft="@+id/systolicField"
         android:layout_centerVertical="true"
         android:ems="10"
-        android:inputType="number"
-        android:text="@string/diastolic_number" />
+        android:hint="diastolic_number"
+        android:inputType="number" />
 
     <Button
         android:id="@+id/submit_button"
