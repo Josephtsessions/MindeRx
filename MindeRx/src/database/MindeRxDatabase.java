@@ -80,23 +80,8 @@ public class MindeRxDatabase extends SQLiteOpenHelper {
 		db.execSQL(CREATE_TABLE_SA_LEVEL);
 		db.execSQL(CREATE_TABLE_BLOOD_PRESSURE);
 		
-		
-		ContentValues bob = new ContentValues();
-		bob.put("essn", "123-45-6789");
-		bob.put("first", "Bob");
-		bob.put("last", "Sanders");
-		bob.put("username", "bs194");
-		bob.put("password", "RXDOGE");
-		
-		ContentValues rick = new ContentValues();
-		rick.put("essn", "842-41-2523");
-		rick.put("first", "Rick");
-		rick.put("last", "Brown");
-		rick.put("username", "rbrown");
-		rick.put("password", "mayo");
-		
-		db.insert("employee", null, bob);
-		db.insert("employee", null, rick);
+		setupSampleEmployees();
+		setupSamplePatients();
 		
 	}
 	
@@ -120,6 +105,48 @@ public class MindeRxDatabase extends SQLiteOpenHelper {
 		
 		return password;
 		
+	}
+	
+	private void setupSampleEmployees() {
+		SQLiteDatabase db = this.getWritableDatabase();
+		
+		ContentValues bob = new ContentValues();
+		bob.put("essn", "123-45-6789");
+		bob.put("first", "Bob");
+		bob.put("last", "Sanders");
+		bob.put("username", "bs194");
+		bob.put("password", "RXDOGE");
+		
+		ContentValues rick = new ContentValues();
+		rick.put("essn", "842-41-2523");
+		rick.put("first", "Rick");
+		rick.put("last", "Brown");
+		rick.put("username", "rbrown");
+		rick.put("password", "mayo");
+		
+		db.insert("employee", null, bob);
+		db.insert("employee", null, rick);
+	}
+	
+	private void setupSamplePatients() {
+		SQLiteDatabase db = this.getWritableDatabase();
+		
+		ContentValues sara = new ContentValues();
+		sara.put("pssn", "492-15-2132");
+		sara.put("first", "Sara");
+		sara.put("last", "North");
+		sara.put("essn", "842-41-2522");
+		sara.put("floor_nurse_essn", "123-45-6789");
+		
+		ContentValues jeff = new ContentValues();
+		jeff.put("pssn", "940-42-1294");
+		jeff.put("first", "Jeff");
+		jeff.put("last", "Tan");
+		jeff.put("essn",  "842-41-2523");
+		jeff.put("floor_nurse_essn",  "123-45-6789");
+		
+		db.insert("patient", null, sara);
+		db.insert("patient", null, jeff);
 	}
 	
 }
