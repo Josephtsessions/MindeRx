@@ -14,8 +14,6 @@ import android.view.View;
  * @see SystemUiHider
  */
 public class PatientHeartRateActivity extends VitalsActivity {
-	//from Ken, just want to test push
-	//second time to test, if you can see it, please delete it
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
