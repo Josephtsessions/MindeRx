@@ -17,7 +17,7 @@ public class MindeRxDatabase extends SQLiteOpenHelper {
 			+ "essn TEXT PRIMARY KEY,"
 			+ "first TEXT,"
 			+ "last TEXT,"
-			+ "username TEXT"
+			+ "username TEXT,"
 			+ "password TEXT)";
 	
 	private static final String CREATE_TABLE_PATIENT = "CREATE TABLE "
@@ -62,7 +62,7 @@ public class MindeRxDatabase extends SQLiteOpenHelper {
 			+ "blood_pressure("
 			+ "vital_id INTEGER,"
 			+ "systolic INTEGER,"
-			+ "diastolic INTEGER"
+			+ "diastolic INTEGER,"
 			+ "FOREIGN KEY(vital_id) REFERENCES vital_data_point(vital_id))";
 	
 	public MindeRxDatabase(Context context) {
@@ -110,10 +110,13 @@ public class MindeRxDatabase extends SQLiteOpenHelper {
 		String[] columns = {"password"};
 		Cursor cursor = db.query("EMPLOYEE", columns, "'" + username + "' = username", null, null, null, null);
 		
-		String password = cursor.getString(0);
-		cursor.close();
 		
-		System.out.println("Got pwd - it was: " + password);
+		String password = "";
+		if (cursor.getCount() >= 1) {
+			cursor.moveToNext();
+			password = cursor.getString(0);			
+		}
+		cursor.close();
 		
 		return password;
 		

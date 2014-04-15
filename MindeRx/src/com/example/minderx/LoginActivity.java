@@ -31,8 +31,6 @@ public class LoginActivity extends Activity {
 		
 		String correctPassword = db.getPasswordFromUsername(username);
 		
-		System.out.println("Correct pwd = " + correctPassword);
-		
 		return password.equals(correctPassword);
 	}
 
