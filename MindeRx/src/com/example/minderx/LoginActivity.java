@@ -14,6 +14,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import database.MindeRxDatabase;
 
 public class LoginActivity extends Activity {
 
@@ -26,7 +27,13 @@ public class LoginActivity extends Activity {
 	}
 
 	private boolean validLogin(String username, String password){
-		return password.equals("o");
+		MindeRxDatabase db = new MindeRxDatabase(this);
+		
+		String correctPassword = db.getPasswordFromUsername(username);
+		
+		System.out.println("Correct pwd = " + correctPassword);
+		
+		return password.equals(correctPassword);
 	}
 
 	private void setupListeners() {
