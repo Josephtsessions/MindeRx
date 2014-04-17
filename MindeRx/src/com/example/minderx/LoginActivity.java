@@ -1,10 +1,5 @@
 package com.example.minderx;
 
-
-
-
-
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -26,14 +21,6 @@ public class LoginActivity extends Activity {
 		setupListeners();
 	}
 
-	private boolean validLogin(String username, String password){
-		MindeRxDatabase db = new MindeRxDatabase(this);
-		
-		String correctPassword = db.getPasswordFromUsername(username);
-		
-		return password.equals(correctPassword);
-	}
-
 	private void setupListeners() {
 		final Button btnLogin =  (Button) this.findViewById(R.id.login_button);
 		final EditText usernameField = (EditText) this.findViewById(R.id.username_txt);
@@ -52,14 +39,32 @@ public class LoginActivity extends Activity {
 				String password = passwordField.getText().toString();
 
 				if (validLogin(username, password)) {
-					Intent patientListActivity = new Intent(v.getContext(), PatientListActivity.class);
-					startActivityForResult(patientListActivity, 0);
+					Intent intent = new Intent(v.getContext(), PatientListActivity.class);
+					
+					String userESSN = queryForEssn(username);
+					intent.putExtra("ESSN", userESSN);
+					
+					startActivityForResult(intent, 0);
 				} else {
 					Toast.makeText(v.getContext(), "Login Failed", Toast.LENGTH_LONG).show();
 				}
 			}
 		});		
 	
+	}
+
+	private boolean validLogin(String username, String password){
+		MindeRxDatabase db = new MindeRxDatabase(this);
+		
+		String correctPassword = db.getPasswordFromUsername(username);
+		
+		return password.equals(correctPassword);
+	}
+
+	private String queryForEssn(String username) {
+		MindeRxDatabase db = new MindeRxDatabase(this);
+		
+		return db.getESSNFromUsername(username);
 	}
 
 }

@@ -1,7 +1,6 @@
 package com.example.minderx;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,6 +11,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import database.MindeRxDatabase;
 
 public class PatientListActivity extends Activity {
 
@@ -21,15 +21,15 @@ public class PatientListActivity extends Activity {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.x_activity_patient_list_relink);
-
-		setupListeners();	
+		
+		Bundle extras = getIntent().getExtras();
+		String essn = extras.getString("ESSN");
+		
+		setupListeners(essn, queryForPssns(essn));	
 		
 		ListView patientsListView = (ListView) findViewById(R.id.patients_listView);
 		
-		List<String> patients = new ArrayList<String>();
-		patients.add("Michael Jackson");
-		patients.add("Billy Mays");
-		patients.add("Steve Jobs");
+		ArrayList<String> patients = queryForPatients(essn);
 		
 		// Adapters are used to populate ListViews in Android
 		ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, patients);
@@ -38,7 +38,7 @@ public class PatientListActivity extends Activity {
 
 	}
 
-	private void setupListeners() {
+	private void setupListeners(final String essn, final ArrayList<String> pssns) {
 		
 		ListView patientsListView = (ListView) findViewById(R.id.patients_listView);
 		
@@ -47,6 +47,9 @@ public class PatientListActivity extends Activity {
 			public void onItemClick(AdapterView parentView, View childView, int position, long id) {
 				
 				Intent intent = new Intent(childView.getContext(), PatientInfoActivity.class);
+				intent.putExtra("ESSN", essn);
+				intent.putExtra("PSSN", pssns.get(position));
+				
 				startActivityForResult(intent, 0);
 			}
 
@@ -63,4 +66,17 @@ public class PatientListActivity extends Activity {
 			}
 		});	
 	}
+	
+	private ArrayList<String> queryForPssns(String essn) {
+		MindeRxDatabase db = new MindeRxDatabase(this);
+		
+		return db.getPssnsFromEssn(essn);	
+	}
+	
+	private ArrayList<String> queryForPatients(String essn) {
+		MindeRxDatabase db = new MindeRxDatabase(this);
+		
+		return db.getPatientsFromEssn(essn);
+	}
+	
 }
