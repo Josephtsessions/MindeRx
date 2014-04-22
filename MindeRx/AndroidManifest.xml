@@ -45,16 +45,6 @@
             android:label="@string/title_activity_patient_sa_level" >
         </activity>
         <activity
-            android:name="com.example.minderx.PatientTemperatureActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/app_name"
-            android:parentActivityName="com.example.minderx.PatientInfoActivity"
-            android:theme="@style/FullscreenTheme" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.minderx.PatientInfoActivity" />
-        </activity>
-        <activity
             android:name="com.example.minderx.GraphPatientInfoActivity"
             android:label="@string/title_activity_graph_patient_info" >
         </activity>
@@ -63,7 +53,7 @@
             android:label="@string/title_activity_manage_patients" >
         </activity>
         <activity
-            android:name="com.example.minderx.PatientTempatureActivity"
+            android:name="com.example.minderx.PatientTemperatureActivity"
             android:label="@string/title_activity_patient_tempature" >
         </activity>
     </application>
