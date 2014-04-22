@@ -6,16 +6,6 @@
     tools:context="com.example.minderx.PatientInfoActivity" 
     tools:ignore="MergeRootFrame" >
 
-    <ListView
-        android:id="@+id/patient_info_listView"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/logout_bn"
-        android:layout_marginTop="17dp" >
-
-    </ListView>
-
     <Button
         android:id="@+id/logout_bn"
         android:layout_width="100dp"
@@ -25,15 +15,6 @@
         android:background="#3300FF"
         android:text="@string/log_out" />
 
-    <Button
-        android:id="@+id/submit_button"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/patient_info_listView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="18dp"
-        android:text="@string/graph_patient_info" />
-
     <EditText
         android:id="@+id/PatientName"
         android:layout_width="wrap_content"
@@ -42,5 +23,52 @@
         android:layout_alignParentLeft="true"
         android:ems="10"
         android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp"
+        android:text="@string/graph_patient_info" />
+
+    <Button
+        android:id="@+id/heart_rate_bn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/o2_sat_lvl_bn"
+        android:layout_alignRight="@+id/o2_sat_lvl_bn"
+        android:layout_below="@+id/blood_pressure_bn"
+        android:layout_marginTop="16dp"
+        android:text="@string/heart_rate" />
+
+    <Button
+        android:id="@+id/o2_sat_lvl_bn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/heart_rate_bn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="@string/o2_stat_lvls" />
+
+    <Button
+        android:id="@+id/temperature_bn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/o2_sat_lvl_bn"
+        android:layout_alignRight="@+id/o2_sat_lvl_bn"
+        android:layout_below="@+id/o2_sat_lvl_bn"
+        android:layout_marginTop="19dp"
+        android:text="@string/temperature" />
+
+    <Button
+        android:id="@+id/blood_pressure_bn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/PatientName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="52dp"
+        android:text="@string/blood_pressure" />
 
 </RelativeLayout> 
