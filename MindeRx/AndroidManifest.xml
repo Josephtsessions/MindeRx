@@ -1,9 +1,11 @@
+<<<<<<< Original
+<<<<<<< Original
 <?xml version="1.0" encoding="utf-8"?>
 <<<<<<< Original
 <<<<<<< Original
 <<<<<<< Original
 <<<<<<< Original
-<<<<<<< Original
+<<<<<<< Original
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.minderx"
@@ -96,7 +98,7 @@
         </activity>
     </application>
 
-</manifest>=======
+</manifest>=======
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <application>
@@ -108,7 +110,7 @@
 
 </manifest>>>>>>>> Added
 
-=======
+=======
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <application>
@@ -120,7 +122,7 @@
 
 </manifest>>>>>>>> Added
 
-=======
+=======
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <application>
@@ -132,7 +134,7 @@
 
 </manifest>>>>>>>> Added
 
-=======
+=======
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <application>
@@ -144,7 +146,7 @@
 
 </manifest>>>>>>>> Added
 
-=======
+=======
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <application>
@@ -154,4 +156,30 @@
         </activity>
     </application>
 
-</manifest>>>>>>>> Added
+</manifest>>>>>>>> Added
+
+=======
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <application>
+        <activity android:name=".PatientBloodPressureActivity"
+            android:label="@string/title_activity_patient_blood_pressure"
+            >
+        </activity>
+    </application>
+
+</manifest>
+>>>>>>> Added
+
+=======
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <application>
+        <activity android:name=".PatientHeartRateActivity"
+            android:label="@string/title_activity_patient_heart_rate"
+            >
+        </activity>
+    </application>
+
+</manifest>
+>>>>>>> Added
