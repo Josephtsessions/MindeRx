@@ -1,3 +1,5 @@
+<<<<<<< Original
+<<<<<<< Original
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.minderx"
@@ -76,6 +78,39 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.minderx.PatientInfoActivity" />
         </activity>
+        <activity
+            android:name="com.example.minderx.GraphPatientInfoActivity"
+            android:label="@string/title_activity_graph_patient_info" >
+        </activity>
+        <activity
+            android:name="com.example.minderx.ManagePatientsActivity"
+            android:label="@string/title_activity_manage_patients" >
+        </activity>
     </application>
 
 </manifest>
+=======
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <application>
+        <activity android:name=".PatientHeartRateActivity"
+            android:label="@string/title_activity_patient_heart_rate"
+            >
+        </activity>
+    </application>
+
+</manifest>
+>>>>>>> Added
+
+=======
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <application>
+        <activity android:name=".PatientBloodPressureActivity"
+            android:label="@string/title_activity_patient_blood_pressure"
+            >
+        </activity>
+    </application>
+
+</manifest>
+>>>>>>> Added

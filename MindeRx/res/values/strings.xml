@@ -17,7 +17,7 @@
     <string name="i_o">I/O</string>
     <string name="temp">Temp</string>
     <string name="temperature">Temperature</string>
-    <string name="blood_pressure">Blood Pressure</string> 
+    <string name="blood_pressure">Blood Pressure</string>
     <string name="dummy_date">(ex)12/31/2014</string>
     <string name="dummy_time">9:00 AM</string>
     <string name="heart_rate">Heart Rate</string>
@@ -43,5 +43,7 @@
     <string name="title_activity_ablank_launcher">ABlankLauncherActivity</string>
     <string name="title_activity_ablank_second_main">ABlankSecondMainActivity</string>
     <string name="password">Password</string>
+    <string name="title_activity_graph_patient_info">GraphPatientInfoActivity</string>
+    <string name="title_activity_manage_patients">ManagePatientsActivity</string>
 
 </resources>
