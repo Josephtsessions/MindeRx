@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#7e7e7e"
-    tools:context=".PatientInfoActivity" >
+    tools:context=".PatientInfoActivity" 
+    tools:ignore="MergeRootFrame" >
 
     <ListView
         android:id="@+id/patient_info_listView"
