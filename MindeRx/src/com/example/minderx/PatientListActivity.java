@@ -76,7 +76,7 @@ public class PatientListActivity extends Activity {
 	private ArrayList<String> queryForPatients(String essn) {
 		MindeRxDatabase db = new MindeRxDatabase(this);
 		
-		return db.getPatientsFromEssn(essn);
+		return db.getPatientNamesFromPssns(queryForPssns(essn));
 	}
 	
 }

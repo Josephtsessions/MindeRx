@@ -26,9 +26,14 @@ public class MindeRxDatabase extends SQLiteOpenHelper {
 			+ "patient("
 			+ "pssn TEXT PRIMARY KEY,"
 			+ "first TEXT,"
-			+ "last TEXT,"
+			+ "last TEXT)";
+
+	private static final String CREATE_TABLE_ASSIGNMENT = "CREATE TABLE "
+			+ "assignment("
+			+ "pssn TEXT,"
 			+ "essn TEXT,"
 			+ "floor_nurse_essn TEXT,"
+			+ "FOREIGN KEY(pssn) REFERENCES patient(pssn),"
 			+ "FOREIGN KEY(essn) REFERENCES employee(essn),"
 			+ "FOREIGN KEY(floor_nurse_essn) REFERENCES employee(essn))";
 	
@@ -76,6 +81,7 @@ public class MindeRxDatabase extends SQLiteOpenHelper {
 		
 		db.execSQL(CREATE_TABLE_EMPLOYEE);
 		db.execSQL(CREATE_TABLE_PATIENT);
+		db.execSQL(CREATE_TABLE_ASSIGNMENT);
 		db.execSQL(CREATE_TABLE_VITAL_DATA_POINTS);
 		db.execSQL(CREATE_TABLE_HEART_RATE);
 		db.execSQL(CREATE_TABLE_TEMPERATURE);
@@ -126,7 +132,7 @@ public class MindeRxDatabase extends SQLiteOpenHelper {
 	public ArrayList<String> getPssnsFromEssn(String essn) {
 		SQLiteDatabase db = this.getReadableDatabase();
 		String[] columns = {"pssn"};
-		Cursor cursor = db.query("PATIENT", columns, "'" + essn + "' = essn", null, null, null, null);
+		Cursor cursor = db.query("ASSIGNMENT", columns, "'" + essn + "' = essn", null, null, null, null);
 
 		ArrayList<String> pssns = new ArrayList<String>();
 		
@@ -143,24 +149,32 @@ public class MindeRxDatabase extends SQLiteOpenHelper {
 		return pssns;
 	}
 	
-	public ArrayList<String> getPatientsFromEssn(String essn) {
+	public ArrayList<String> getPatientNamesFromPssns(ArrayList<String> pssns) {
 		SQLiteDatabase db = this.getReadableDatabase();
 		String[] columns = {"first", "last"};
-		Cursor cursor = db.query("PATIENT", columns, "'" + essn + "' = essn", null, null, null, null);
-
+		
 		ArrayList<String> names = new ArrayList<String>();
 		
-		if (cursor != null) {
-			while (cursor.moveToNext()) {
-				String firstName = cursor.getString(0);
-				String lastName = cursor.getString(1);
+		for (int i = 0; i < pssns.size(); i++) {
+
+			System.out.println(pssns.get(i));
 			
-				String name = firstName + " " + lastName;
+			Cursor cursor = db.query("PATIENT", columns, "'" + pssns.get(i) + "' = pssn", null, null, null, null);
+
 			
-				names.add(name);
+			if (cursor != null) {
+				while (cursor.moveToNext()) {
+					String firstName = cursor.getString(0);
+					String lastName = cursor.getString(1);
+				
+					String name = firstName + " " + lastName;
+				
+					names.add(name);
+				}
+			
+				cursor.close();
 			}
-		
-			cursor.close();
+			
 		}
 			
 		return names;		
@@ -190,34 +204,51 @@ public class MindeRxDatabase extends SQLiteOpenHelper {
 		sara.put("pssn", "492-15-2132");
 		sara.put("first", "Sara");
 		sara.put("last", "North");
-		sara.put("essn", "842-41-2522");
-		sara.put("floor_nurse_essn", "123-45-6789");
+		
+		ContentValues saraAssign = new ContentValues();
+		saraAssign.put("pssn", "492-15-2132");
+		saraAssign.put("essn", "842-41-2523");
+		saraAssign.put("floor_nurse_essn", "123-45-6789");
 		
 		ContentValues jeff = new ContentValues();
 		jeff.put("pssn", "940-42-1294");
 		jeff.put("first", "Jeff");
 		jeff.put("last", "Tan");
-		jeff.put("essn",  "842-41-2523"); // Rick
-		jeff.put("floor_nurse_essn",  "123-45-6789");
+		
+		ContentValues jeffAssign = new ContentValues();
+		jeffAssign.put("pssn", "940-42-1294");
+		jeffAssign.put("essn", "842-41-2523");
+		jeffAssign.put("floor_nurse_essn", "123-45-6789");
 	
 		ContentValues tom = new ContentValues();
 		tom.put("pssn", "720-43-1214");
 		tom.put("first", "Tom");
-		tom.put("last", "Booker");
-		tom.put("essn",  "842-41-2523"); // Rick
-		tom.put("floor_nurse_essn",  "123-45-6789");
+		tom.put("last", "Booker");;
+		
+		ContentValues tomAssign = new ContentValues();
+		tomAssign.put("pssn", "720-43-1214");
+		tomAssign.put("essn", "123-45-6789");
+		tomAssign.put("floor_nurse_essn", "123-45-6789");
 
 		ContentValues cory = new ContentValues();
 		cory.put("pssn", "540-12-1294");
 		cory.put("first", "Cory");
 		cory.put("last", "Green");
-		cory.put("essn",  "123-45-6789"); // Bob
-		cory.put("floor_nurse_essn",  "123-45-6789");
+		
+		ContentValues coryAssign = new ContentValues();
+		coryAssign.put("pssn", "540-12-1294");
+		coryAssign.put("essn", "123-45-6789");
+		coryAssign.put("floor_nurse_essn", "123-45-6789");
 		
 		db.insert("patient", null, sara);
 		db.insert("patient", null, jeff);
 		db.insert("patient", null, tom);
 		db.insert("patient", null, cory);
+		
+		db.insert("assignment", null, saraAssign);
+		db.insert("assignment", null, jeffAssign);
+		db.insert("assignment", null, tomAssign);
+		db.insert("assignment", null, coryAssign);
 	}
 	
 }
