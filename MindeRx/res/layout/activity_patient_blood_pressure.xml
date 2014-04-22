@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.minderx.PatientBloodPressureActivity"
+    android:background="#7e7e7e"
     tools:ignore="MergeRootFrame" >
 
     <TextView
@@ -24,7 +25,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="52dp"
         android:ems="10"
-        android:hint="systolic_number"
+        android:hint="@string/systolic_number"
         android:inputType="number" />
 
     <EditText
@@ -34,7 +35,7 @@
         android:layout_alignLeft="@+id/systolicField"
         android:layout_centerVertical="true"
         android:ems="10"
-        android:hint="diastolic_number"
+        android:hint="@string/diastolic_number"
         android:inputType="number" />
 
     <Button
