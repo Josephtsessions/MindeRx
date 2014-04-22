@@ -1,87 +1,55 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center_horizontal"
-    android:background="#7e7e7e" >
+    android:background="#009900"
+    tools:context="com.example.minderx.PatientSaLevelActivity" >
 
-    <EditText
-        android:id="@+id/Patient_Name_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textColor="#3300FF" >
+    <!--
+         The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc.
+    -->
 
-        <requestFocus />
-    </EditText>
+    <TextView
+        android:id="@+id/fullscreen_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:keepScreenOn="true"
+        android:text="@string/dummy_content"
+        android:textColor="#33b5e5"
+        android:textSize="50sp"
+        android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/SaO2_Level"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/Patient_Name_txt"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:text="@string/sao2"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp" />
+    <!--
+         This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows.
+    -->
 
-    <Button
-        android:id="@+id/submit_bn"
-        android:layout_width="125dp"
-        android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/SaO2_Level"
-        android:layout_marginBottom="16dp"
-        android:background="#3300FF"
-        android:text="@string/submit"
-        android:textSize="25sp" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true" >
 
-    <Button
-        android:id="@+id/cancel_bn"
-        android:layout_width="125dp"
-        android:layout_height="40dp"
-        android:layout_alignBottom="@+id/submit_bn"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="22dp"
-        android:background="#FF0000"
-        android:text="@string/cancel"
-        android:textSize="25sp" />
+        <LinearLayout
+            android:id="@+id/fullscreen_content_controls"
+            style="?metaButtonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/black_overlay"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent" >
 
-    <EditText
-        android:id="@+id/date_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/SaO2_Level"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp"
-        android:ems="10"
-        android:inputType="date"
-        android:text="@string/dummy_date" />
+            <Button
+                android:id="@+id/dummy_button"
+                style="?metaButtonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/dummy_button" />
+        </LinearLayout>
+    </FrameLayout>
 
-    <EditText
-        android:id="@+id/Temperature_Num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/systolicField"
-        android:layout_below="@+id/systolicField"
-        android:layout_marginTop="31dp"
-        android:ems="10"
-        android:inputType="number"
-        android:text="@string/o2_stat_lvls" />
-
-    <EditText
-        android:id="@+id/systolicField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/date_txt"
-        android:layout_centerVertical="true"
-        android:ems="10"
-        android:inputType="time"
-        android:text="@string/dummy_time" />
-
-</RelativeLayout>
+</FrameLayout>

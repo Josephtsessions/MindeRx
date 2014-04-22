@@ -16,7 +16,7 @@ public class LoginActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.x_activity_login_relink_javafile_and_delete);
+		setContentView(R.layout.activity_login);
 
 		setupListeners();
 	}

@@ -19,7 +19,7 @@ public class PatientTemperatureActivity extends VitalsActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		setContentView(R.layout.x_activity_patient_temperature);
+		setContentView(R.layout.activity_patient_temperature);
 		setupActionBar();
 
 		final View controlsView = findViewById(R.id.fullscreen_content_controls);

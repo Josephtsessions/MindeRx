@@ -19,7 +19,7 @@ public class PatientInfoActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		setContentView(R.layout.x_activity_vitals_relink);
+		setContentView(R.layout.activity_patient_info);
 
 		setupListeners(R.id.blood_pressure_bn, PatientBloodPressureActivity.class);
 		setupListeners(R.id.heart_rate_bn    , PatientHeartRateActivity.class);

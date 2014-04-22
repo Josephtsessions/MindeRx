@@ -20,7 +20,7 @@ public class PatientListActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		setContentView(R.layout.x_activity_patient_list_relink);
+		setContentView(R.layout.activity_patient_list);
 		
 		Bundle extras = getIntent().getExtras();
 		String essn = extras.getString("ESSN");
