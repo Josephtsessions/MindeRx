@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#7e7e7e"
-    tools:context=".ManagePatientsActivity" 
+    tools:context="com.example.minderx.ManagePatientsActivity" 
     tools:ignore="MergeRootFrame">
     
     <Button

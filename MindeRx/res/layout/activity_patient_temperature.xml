@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="center_horizontal"
     android:background="#7e7e7e"
-    tools:context=".PatientTemperatureActivity"
+    tools:context="com.example.minderx.PatientTemperatureActivity"
     tools:ignore="MergeRootFrame" >
 
     <TextView

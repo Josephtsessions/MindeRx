@@ -25,7 +25,6 @@
 	        android:layout_centerHorizontal="true"
 	        android:layout_marginTop="128dp"
 	        android:background="#eeeeee"
-	        android:editable="false"
 	        android:ems="10"
 	        android:hint="@string/hint_txt_username"
 	        android:inputType="textPersonName"
