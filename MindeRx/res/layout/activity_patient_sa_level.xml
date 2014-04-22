@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="center_horizontal"
     android:background="#7e7e7e"
-    tools:context=".PatientSA_levelActivity" >
+    tools:context=".PatientSaLevelActivity" >
 
     <EditText
         android:id="@+id/Patient_Name_txt"

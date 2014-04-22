@@ -45,5 +45,7 @@
     <string name="password">Password</string>
     <string name="title_activity_graph_patient_info">GraphPatientInfoActivity</string>
     <string name="title_activity_manage_patients">ManagePatientsActivity</string>
+    <string name="title_activity_patient_info">PatientInfoActivity</string>
+    <string name="title_activity_patient_tempature">PatientTempatureActivity</string>
 
 </resources>

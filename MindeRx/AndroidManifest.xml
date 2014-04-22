@@ -1,5 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <<<<<<< Original
 <<<<<<< Original
+<<<<<<< Original
+<<<<<<< Original
+<<<<<<< Original
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.minderx"
@@ -86,31 +90,68 @@
             android:name="com.example.minderx.ManagePatientsActivity"
             android:label="@string/title_activity_manage_patients" >
         </activity>
-    </application>
-
-</manifest>
-=======
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" >
-
-    <application>
-        <activity android:name=".PatientHeartRateActivity"
-            android:label="@string/title_activity_patient_heart_rate"
-            >
+        <activity
+            android:name="com.example.minderx.PatientTempatureActivity"
+            android:label="@string/title_activity_patient_tempature" >
         </activity>
     </application>
 
-</manifest>
->>>>>>> Added
-
-=======
+</manifest>=======
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <application>
-        <activity android:name=".PatientBloodPressureActivity"
-            android:label="@string/title_activity_patient_blood_pressure"
-            >
+        <activity
+            android:name="com.example.minderx.PatientHeartRateActivity"
+            android:label="@string/title_activity_patient_heart_rate" >
         </activity>
     </application>
 
-</manifest>
->>>>>>> Added
+</manifest>>>>>>>> Added
+
+=======
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <application>
+        <activity
+            android:name="com.example.minderx.PatientBloodPressureActivity"
+            android:label="@string/title_activity_patient_blood_pressure" >
+        </activity>
+    </application>
+
+</manifest>>>>>>>> Added
+
+=======
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <application>
+        <activity
+            android:name="com.example.minderx.PatientInfoActivity"
+            android:label="@string/title_activity_patient_info" >
+        </activity>
+    </application>
+
+</manifest>>>>>>>> Added
+
+=======
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <application>
+        <activity
+            android:name="com.example.minderx.PatientListActivity"
+            android:label="@string/title_activity_patient_list" >
+        </activity>
+    </application>
+
+</manifest>>>>>>>> Added
+
+=======
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <application>
+        <activity
+            android:name="com.example.minderx.PatientSaLevelActivity"
+            android:label="@string/title_activity_patient_sa_level" >
+        </activity>
+    </application>
+
+</manifest>>>>>>>> Added
