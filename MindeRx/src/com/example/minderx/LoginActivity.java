@@ -54,6 +54,9 @@ public class LoginActivity extends Activity {
 	}
 
 	private boolean validLogin(String username, String password){
+		
+		if (username.equals("") || password.equals("")) {return false;}
+		
 		MindeRxDatabase db = new MindeRxDatabase(this);
 		
 		String correctPassword = db.getPasswordFromUsername(username);
