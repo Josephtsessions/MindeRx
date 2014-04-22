@@ -1,5 +1,6 @@
 package com.example.minderx;
 
+
 import com.example.minderx.util.SystemUiHider;
 
 import android.annotation.TargetApi;

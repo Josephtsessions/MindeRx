@@ -1,5 +1,11 @@
 package com.example.minderx;
 
+
+import com.example.minderx.PatientListActivity;
+import com.example.minderx.R;
+import com.example.minderx.R.id;
+import com.example.minderx.R.layout;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
