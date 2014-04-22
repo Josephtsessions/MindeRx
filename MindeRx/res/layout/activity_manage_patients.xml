@@ -14,15 +14,6 @@
         android:layout_alignParentTop="true"
         android:background="#3300FF"
         android:text="@string/log_out" />
-
-    <EditText
-        android:id="@+id/patient_name_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/logout_bn"
-        android:layout_alignParentLeft="true"
-        android:ems="10"
-        android:inputType="textPersonName" />
     
     <ListView
         android:id="@+id/patient_manage_listView"
@@ -63,5 +54,14 @@
         android:background="#FF0000"
         android:text="@string/unassign_from"
         android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/staff_name_label_manage_patients"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/logout_bn"
+        android:layout_alignBottom="@+id/logout_bn"
+        android:layout_alignLeft="@+id/patient_manage_listView"
+        android:text="@string/staff_name_placeholder" />
     
 </RelativeLayout>

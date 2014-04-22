@@ -7,83 +7,59 @@
     tools:context="com.example.minderx.PatientHeartRateActivity" 
     tools:ignore="MergeRootFrame" >
 
+    <Button
+        android:id="@+id/submit_bn"
+        android:layout_width="125dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="37dp"
+        android:background="#3300FF"
+        android:text="@string/submit"
+        android:textSize="25sp" />
+
     <EditText
-        android:id="@+id/Patient_Name_txt"
+        android:id="@+id/Temperature_Num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/heart_rate_txt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="124dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:textColor="#3300FF" >
+        android:hint="@string/heart_rate_num"
+        android:inputType="number" >
 
         <requestFocus />
     </EditText>
 
     <TextView
         android:id="@+id/heart_rate_txt"
-        android:layout_width="300dp"
+        android:layout_width="150"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/Patient_Name_txt"
-        android:layout_marginTop="24dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="86dp"
         android:ems="10"
         android:text="@string/heart_rate"
         android:textColor="#FFFFFF"
         android:textSize="30sp" />
 
-    <Button
-        android:id="@+id/submit_bn"
-        android:layout_width="125dp"
-        android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/heart_rate_txt"
-        android:layout_marginBottom="16dp"
-        android:background="#3300FF"
-        android:text="@string/submit"
-        android:textSize="25sp" />
-
-    <Button
-        android:id="@+id/cancel_bn"
-        android:layout_width="125dp"
-        android:layout_height="40dp"
-        android:layout_alignBottom="@+id/submit_bn"
+    <TextView
+        android:id="@+id/patient_name_label_heart_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="22dp"
-        android:background="#FF0000"
-        android:text="@string/cancel"
-        android:textSize="25sp" />
+        android:layout_below="@+id/staff_name_label_heart_rate"
+        android:layout_marginLeft="16dp"
+        android:text="@string/patient_name_placeholder" />
 
-    <EditText
-        android:id="@+id/date_txt"
+    <TextView
+        android:id="@+id/staff_name_label_heart_rate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/heart_rate_txt"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp"
-        android:ems="10"
-        android:inputType="date"
-        android:hint="@string/dummy_date" />
-
-    <EditText
-        android:id="@+id/Temperature_Num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/systolicField"
-        android:layout_below="@+id/systolicField"
-        android:layout_marginTop="31dp"
-        android:ems="10"
-        android:inputType="number"
-        android:hint="@string/heart_rate_num" />
-
-    <EditText
-        android:id="@+id/systolicField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/date_txt"
-        android:layout_centerVertical="true"
-        android:ems="10"
-        android:inputType="time"
-        android:hint="@string/dummy_time" />
+        android:layout_alignLeft="@+id/patient_name_label_heart_rate"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:text="@string/staff_name_placeholder" />
 
 </RelativeLayout>

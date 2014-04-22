@@ -15,15 +15,6 @@
         android:background="#3300FF"
         android:text="@string/log_out" />
 
-    <EditText
-        android:id="@+id/PatientName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/logout_bn"
-        android:layout_alignParentLeft="true"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
     <Button
         android:id="@+id/submit_button"
         android:layout_width="300dp"
@@ -37,8 +28,8 @@
         android:id="@+id/heart_rate_bn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/o2_sat_lvl_bn"
-        android:layout_alignRight="@+id/o2_sat_lvl_bn"
+        android:layout_alignLeft="@+id/blood_pressure_bn"
+        android:layout_alignRight="@+id/blood_pressure_bn"
         android:layout_below="@+id/blood_pressure_bn"
         android:layout_marginTop="16dp"
         android:text="@string/heart_rate" />
@@ -47,8 +38,9 @@
         android:id="@+id/o2_sat_lvl_bn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/heart_rate_bn"
+        android:layout_alignRight="@+id/heart_rate_bn"
         android:layout_below="@+id/heart_rate_bn"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         android:text="@string/o2_stat_lvls" />
 
@@ -66,9 +58,26 @@
         android:id="@+id/blood_pressure_bn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/PatientName"
+        android:layout_below="@+id/logout_bn"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="48dp"
         android:text="@string/blood_pressure" />
+
+    <TextView
+        android:id="@+id/staff_name_label_sa02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/logout_bn"
+        android:layout_alignBottom="@+id/logout_bn"
+        android:layout_alignLeft="@+id/submit_button"
+        android:text="&lt;Staff Name Here>" />
+
+    <TextView
+        android:id="@+id/patient_name_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/staff_name_label_sa02"
+        android:layout_below="@+id/staff_name_label_sa02"
+        android:text="&lt;Patient Name Here>" />
 
 </RelativeLayout> 

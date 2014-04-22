@@ -25,18 +25,6 @@
         android:background="#3300FF"
         android:text="@string/log_out" />
 
-    <EditText
-        android:id="@+id/PatientName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/PatientName"
-        android:layout_alignParentLeft="true"
-        android:ems="10"
-        android:inputType="textPersonName" >
-
-        <requestFocus />
-    </EditText>
-
     <Button
         android:id="@+id/ManagePatient_bn"
         android:layout_width="300dp"
@@ -45,5 +33,14 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="18dp"
         android:text="@string/manage_patients" />
+
+    <TextView
+        android:id="@+id/staff_name_label_patient_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/logout_bn"
+        android:layout_alignBottom="@+id/logout_bn"
+        android:layout_alignLeft="@+id/ManagePatient_bn"
+        android:text="@string/staff_name_placeholder" />
 
 </RelativeLayout>

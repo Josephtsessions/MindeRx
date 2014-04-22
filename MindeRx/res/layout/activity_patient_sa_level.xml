@@ -7,83 +7,58 @@
     tools:context="com.example.minderx.PatientSaLevelActivity"
     tools:ignore="MergeRootFrame" >
 
-    <EditText
-        android:id="@+id/Patient_Name_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textColor="#3300FF" >
-
-        <requestFocus />
-    </EditText>
-
-    <TextView
-        android:id="@+id/SaO2_Level"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/Patient_Name_txt"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:text="@string/sao2"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp" />
-
     <Button
         android:id="@+id/submit_bn"
         android:layout_width="125dp"
         android:layout_height="40dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/SaO2_Level"
-        android:layout_marginBottom="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="37dp"
         android:background="#3300FF"
         android:text="@string/submit"
         android:textSize="25sp" />
-
-    <Button
-        android:id="@+id/cancel_bn"
-        android:layout_width="125dp"
-        android:layout_height="40dp"
-        android:layout_alignBottom="@+id/submit_bn"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="22dp"
-        android:background="#FF0000"
-        android:text="@string/cancel"
-        android:textSize="25sp" />
-
-    <EditText
-        android:id="@+id/date_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/SaO2_Level"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp"
-        android:ems="10"
-        android:inputType="date"
-        android:hint="@string/dummy_date" />
 
     <EditText
         android:id="@+id/Temperature_Num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/systolicField"
-        android:layout_below="@+id/systolicField"
-        android:layout_marginTop="31dp"
+        android:layout_below="@+id/SaO2_Level"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="114dp"
         android:ems="10"
-        android:inputType="number"
-        android:hint="@string/o2_stat_lvls" />
+        android:hint="@string/o2_stat_lvls"
+        android:inputType="number" >
 
-    <EditText
-        android:id="@+id/systolicField"
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/staff_name_label_sa02"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/date_txt"
-        android:layout_centerVertical="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="18dp"
+        android:layout_toLeftOf="@+id/SaO2_Level"
+        android:text="@string/staff_name_placeholder" />
+
+    <TextView
+        android:id="@+id/SaO2_Level"
+        android:layout_width="75"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/patient_name_label_sa02"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
         android:ems="10"
-        android:inputType="time"
-        android:hint="@string/dummy_time" />
+        android:text="@string/sao2"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/patient_name_label_sa02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/staff_name_label_sa02"
+        android:layout_below="@+id/staff_name_label_sa02"
+        android:text="@string/patient_name_placeholder" />
 
 </RelativeLayout>

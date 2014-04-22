@@ -15,15 +15,6 @@
         android:background="#3300FF"
         android:text="@string/log_out" />
 
-    <EditText
-        android:id="@+id/patient_name_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/logout_bn"
-        android:layout_alignParentLeft="true"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
     <ToggleButton
         android:id="@+id/pulse_toggle_bn"
         android:layout_width="75dp"
@@ -80,16 +71,6 @@
         android:text="@string/blood_pressure" />
 
     <EditText
-        android:id="@+id/start_date_txt"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/bp_toggle_bn"
-        android:layout_below="@+id/patient_name_txt"
-        android:layout_marginTop="14dp"
-        android:ems="10"
-        android:inputType="date" />
-
-    <EditText
         android:id="@+id/end_date_txt"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
@@ -109,5 +90,32 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:text="@string/graph_done" />
+
+    <EditText
+        android:id="@+id/start_date_txt"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/bp_toggle_bn"
+        android:layout_below="@+id/logout_bn"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="date" />
+
+    <TextView
+        android:id="@+id/staff_name_label_graph_patient_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/logout_bn"
+        android:layout_alignBottom="@+id/logout_bn"
+        android:layout_toLeftOf="@+id/pulse_toggle_bn"
+        android:text="@string/staff_name_placeholder" />
+
+    <TextView
+        android:id="@+id/patient_name_label_graph_patient_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/start_date_txt"
+        android:layout_alignLeft="@+id/staff_name_label_graph_patient_info"
+        android:text="@string/patient_name_placeholder" />
 
 </RelativeLayout>

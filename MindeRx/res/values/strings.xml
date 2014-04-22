@@ -38,6 +38,8 @@
     <string name="hint_txt_password">Pass****</string>
     <string name="hint_txt_username">Username</string>
     <string name="systolic_number">Systolic Number</string>
+    <string name="patient_name_placeholder">[Patient Name Here]</string>
+    <string name="staff_name_placeholder">[Staff Name Here]</string>
     <string name="diastolic_number">Diastolic Number</string>
     <string name="login_progress_signi">login_progress_signi</string>
     <string name="title_activity_ablank_launcher">ABlankLauncherActivity</string>
@@ -47,5 +49,6 @@
     <string name="title_activity_manage_patients">ManagePatientsActivity</string>
     <string name="title_activity_patient_info">PatientInfoActivity</string>
     <string name="title_activity_patient_tempature">PatientTempatureActivity</string>
+    <string />
 
 </resources>
