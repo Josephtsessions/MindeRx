@@ -27,7 +27,7 @@ public class PatientListActivity extends Activity {
 		
 		setupListeners(essn, queryForPssns(essn));	
 		
-		ListView patientsListView = (ListView) findViewById(R.id.patients_listView);
+		ListView patientsListView = (ListView) findViewById(R.id.patient_info_listView);
 		
 		ArrayList<String> patients = queryForPatients(essn);
 		
@@ -47,7 +47,7 @@ public class PatientListActivity extends Activity {
     
     private void setupListeners(final String essn, final ArrayList<String> pssns) {
 		
-		ListView patientsListView = (ListView) findViewById(R.id.patients_listView);
+		ListView patientsListView = (ListView) findViewById(R.id.patient_info_listView);
 		
 		patientsListView.setOnItemClickListener(new OnItemClickListener() {
 			

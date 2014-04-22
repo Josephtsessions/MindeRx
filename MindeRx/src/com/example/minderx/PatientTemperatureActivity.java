@@ -9,7 +9,7 @@ public class PatientTemperatureActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_patient_tempature);
+        setContentView(R.layout.activity_patient_temperature);
     }
 
 
