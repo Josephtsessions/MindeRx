@@ -28,7 +28,7 @@
         android:layout_marginBottom="72dp"
         android:ems="10"
         android:hint="@string/o2_stat_lvls"
-        android:inputType="number" />
+        android:inputType="numberDecimal" />
 
     <TextView
         android:id="@+id/staff_name_label_patient_sa02"

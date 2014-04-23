@@ -1,10 +1,17 @@
 package com.example.minderx;
 
-import database.MindeRxDatabase;
-import android.os.Bundle;
 import android.app.Activity;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+import database.MindeRxDatabase;
 
 public class PatientHeartRateActivity extends Activity {
 
@@ -22,6 +29,7 @@ public class PatientHeartRateActivity extends Activity {
 		staffName.setText( queryForStaffName(essn) );
 		patientName.setText( queryForPatientName(pssn) );
 
+		setupListeners(essn, pssn);
     }
 
 	private String queryForPatientName(String pssn) {
@@ -42,5 +50,34 @@ public class PatientHeartRateActivity extends Activity {
         getMenuInflater().inflate(R.menu.patient_heart_rate, menu);
         return true;
     }
+    
+	private void setupListeners(final String essn, final String pssn) {
+		final Button submitBn =  (Button) this.findViewById(R.id.submit_bn);
+		final EditText temperatureField = (EditText) this.findViewById(R.id.Temperature_Num); // Temperature num needs to be changed - Doesn't match HeartRateActivity
+		
+		submitBn.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+
+				InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+	            imm.hideSoftInputFromWindow(submitBn.getWindowToken(), 
+	                                      InputMethodManager.RESULT_UNCHANGED_SHOWN);
+				
+	            String bpmFieldText = temperatureField.getText().toString();
+	            Integer bpm =  Integer.valueOf( bpmFieldText );
+	            
+	            recordHeartRate(bpm, essn, pssn);
+				Toast.makeText(v.getContext(), "Recorded!", Toast.LENGTH_LONG).show();
+			}
+		});		
+	
+	}
+	
+	private void recordHeartRate(Integer bpm, String essn, String pssn) {
+		MindeRxDatabase db = new MindeRxDatabase(this);
+		
+		db.recordHeartRate(bpm, essn, pssn);
+	}
     
 }

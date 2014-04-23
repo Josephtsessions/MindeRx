@@ -1,6 +1,8 @@
 	package database;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -43,7 +45,7 @@ public class MindeRxDatabase extends SQLiteOpenHelper {
 			+ "vital_name TEXT,"
 			+ "pssn TEXT,"
 			+ "essn TEXT,"
-			+ "date DATETIME,"
+			+ "date TEXT,"
 			+ "FOREIGN KEY(pssn) REFERENCES patient(pssn),"
 			+ "FOREIGN KEY(essn) REFERENCES employee(essn))";
 	
@@ -110,6 +112,7 @@ public class MindeRxDatabase extends SQLiteOpenHelper {
 			password = cursor.getString(0);			
 		}
 		cursor.close();
+		db.close();
 		
 		return password;
 		
@@ -125,6 +128,7 @@ public class MindeRxDatabase extends SQLiteOpenHelper {
 		essn = cursor.getString(0);
 		
 		cursor.close();
+		db.close();
 		
 		return essn;
 	}
@@ -144,6 +148,7 @@ public class MindeRxDatabase extends SQLiteOpenHelper {
 			}
 		
 			cursor.close();
+			db.close();
 		}
 		
 		return pssns;
@@ -184,6 +189,7 @@ public class MindeRxDatabase extends SQLiteOpenHelper {
 		}
 
 		cursor.close();
+		db.close();
 		
 		return name;
 		
@@ -207,9 +213,149 @@ public class MindeRxDatabase extends SQLiteOpenHelper {
 		}
 		
 		cursor.close();
+		db.close();
 		
 		return name;
 		
+	}
+	
+	public void recordBloodPressure(Integer systolic, Integer diastolic, String essn, String pssn) {
+		SQLiteDatabase db = this.getWritableDatabase();
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String strDate = sdf.format(new Date());
+		
+		ContentValues vitalRecording = new ContentValues();
+		vitalRecording.put("vital_name", "Blood Pressure");
+		vitalRecording.put("pssn", pssn);
+		vitalRecording.put("essn", essn);
+		vitalRecording.put("date", strDate);
+		
+		db.insert("vital_data_point", null, vitalRecording);
+		
+		Cursor cursor = db.rawQuery("select last_insert_rowid()", null);
+		
+		Integer lastId = 0;
+		
+		if (cursor != null) {
+			cursor.moveToNext();
+			lastId = cursor.getInt(0);
+		}
+		
+		cursor.close();
+		
+		ContentValues bloodPressureVitalRecording = new ContentValues();
+		bloodPressureVitalRecording.put("vital_id", lastId);
+		bloodPressureVitalRecording.put("systolic", systolic);
+		bloodPressureVitalRecording.put("diastolic", diastolic);
+		
+		db.insert("blood_pressure", null, bloodPressureVitalRecording);
+		
+		db.close();
+	}
+	
+	public void recordHeartRate(Integer bpm, String essn, String pssn) {
+		SQLiteDatabase db = this.getWritableDatabase();
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String strDate = sdf.format(new Date());
+		
+		ContentValues vitalRecording = new ContentValues();
+		vitalRecording.put("vital_name", "Heart Rate");
+		vitalRecording.put("pssn", pssn);
+		vitalRecording.put("essn", essn);
+		vitalRecording.put("date", strDate);
+		
+		db.insert("vital_data_point", null, vitalRecording);
+		
+		Cursor cursor = db.rawQuery("select last_insert_rowid()", null);
+		
+		Integer lastId = 0;
+		
+		if (cursor != null) {
+			cursor.moveToNext();
+			lastId = cursor.getInt(0);
+		}
+		
+		cursor.close();
+		
+		System.out.println("Last ID was: " + String.valueOf(lastId) + " and BPM was: " + String.valueOf(bpm));
+		
+		ContentValues heartRateVitalRecording = new ContentValues();
+		heartRateVitalRecording.put("vital_id", lastId);
+		heartRateVitalRecording.put("beats_per_minute", bpm);
+		
+		db.insert("heart_rate", null, heartRateVitalRecording);
+		
+		db.close();
+	}
+	
+	public void recordSaLevel(Double saLevel, String essn, String pssn) {
+		SQLiteDatabase db = this.getWritableDatabase();
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String strDate = sdf.format(new Date());
+
+		ContentValues vitalRecording = new ContentValues();
+		vitalRecording.put("vital_name", "Sa Level");
+		vitalRecording.put("pssn", pssn);
+		vitalRecording.put("essn", essn);
+		vitalRecording.put("date", strDate);
+		
+		db.insert("vital_data_point", null, vitalRecording);
+		
+		Cursor cursor = db.rawQuery("select last_insert_rowid()", null);
+		
+		Integer lastId = 0;
+		
+		if (cursor != null) {
+			cursor.moveToNext();
+			lastId = cursor.getInt(0);
+		}
+		
+		cursor.close();
+				
+		ContentValues saVitalRecording = new ContentValues();
+		saVitalRecording.put("vital_id", lastId);
+		saVitalRecording.put("beats_per_minute", saLevel);
+		
+		db.insert("sa_level", null, saVitalRecording);
+		
+		db.close();
+	}
+	
+	public void recordTemperature(Integer temperature, String essn, String pssn) {
+		SQLiteDatabase db = this.getWritableDatabase();
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String strDate = sdf.format(new Date());
+
+		ContentValues vitalRecording = new ContentValues();
+		vitalRecording.put("vital_name", "Temperature");
+		vitalRecording.put("pssn", pssn);
+		vitalRecording.put("essn", essn);
+		vitalRecording.put("date", strDate);
+		
+		db.insert("vital_data_point", null, vitalRecording);
+		
+		Cursor cursor = db.rawQuery("select last_insert_rowid()", null);
+		
+		Integer lastId = 0;
+		
+		if (cursor != null) {
+			cursor.moveToNext();
+			lastId = cursor.getInt(0);
+		}
+		
+		cursor.close();
+				
+		ContentValues temperatureVitalRecording = new ContentValues();
+		temperatureVitalRecording.put("vital_id", lastId);
+		temperatureVitalRecording.put("value", temperature);
+		
+		db.insert("sa_level", null, temperatureVitalRecording);
+		
+		db.close();
 	}
 	
 	private void setupSampleEmployees(SQLiteDatabase db) {		

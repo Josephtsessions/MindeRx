@@ -3,8 +3,14 @@ package com.example.minderx;
 import database.MindeRxDatabase;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Context;
 import android.view.Menu;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class PatientSaLevelActivity extends Activity {
 
@@ -22,6 +28,7 @@ public class PatientSaLevelActivity extends Activity {
 		staffName.setText( queryForStaffName(essn) );
 		patientName.setText( queryForPatientName(pssn) );
 
+		setupListeners(essn, pssn);
     }
     
 	private String queryForPatientName(String pssn) {
@@ -43,4 +50,33 @@ public class PatientSaLevelActivity extends Activity {
         return true;
     }
     
+	private void setupListeners(final String essn, final String pssn) {
+		final Button submitBn =  (Button) this.findViewById(R.id.submit_bn);
+		final EditText saField = (EditText) this.findViewById(R.id.Temperature_Num);
+		
+		submitBn.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+
+				InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+	            imm.hideSoftInputFromWindow(submitBn.getWindowToken(), 
+	                                      InputMethodManager.RESULT_UNCHANGED_SHOWN);
+				
+	            String saFieldText = saField.getText().toString();
+	            double saLevel =  Double.valueOf( saFieldText );
+	            
+	            recordSaLevel(saLevel, essn, pssn);
+				Toast.makeText(v.getContext(), "Recorded!", Toast.LENGTH_LONG).show();
+			}
+		});		
+	
+	}
+	
+	private void recordSaLevel(Double ratio, String essn, String pssn) {
+		MindeRxDatabase db = new MindeRxDatabase(this);
+		
+		db.recordSaLevel(ratio, essn, pssn);
+	}
+	
 }
