@@ -155,8 +155,6 @@ public class MindeRxDatabase extends SQLiteOpenHelper {
 	}
 	
 	public ArrayList<String> getPatientNamesFromPssns(ArrayList<String> pssns) {
-		SQLiteDatabase db = this.getReadableDatabase();
-		String[] columns = {"first", "last"};
 		
 		ArrayList<String> names = new ArrayList<String>();
 		
@@ -192,6 +190,42 @@ public class MindeRxDatabase extends SQLiteOpenHelper {
 		db.close();
 		
 		return name;
+		
+	}
+	
+	public ArrayList<String> getEssns() {
+		SQLiteDatabase db = this.getReadableDatabase();
+		ArrayList<String> essns = new ArrayList<String>();
+		String query = "SELECT ESSN FROM EMPLOYEE";
+		
+		Cursor cursor = db.rawQuery(query, null);
+		
+		while ( cursor.moveToNext() ) {
+			String essn = cursor.getString(0);
+			
+			essns.add(essn);
+		}
+		
+		cursor.close();
+		db.close();
+		
+		return essns;
+		
+	}
+	
+	public ArrayList<String> getStaffNames(ArrayList<String> essns) {
+		
+		ArrayList<String> names = new ArrayList<String>();
+		
+		for (int i = 0; i < essns.size(); i++) {
+			
+			String name = getStaffNameFromEssn( essns.get(i) );
+			
+			names.add(name);
+			
+		}
+		
+		return names;
 		
 	}
 	

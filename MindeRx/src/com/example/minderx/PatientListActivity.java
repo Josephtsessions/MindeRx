@@ -33,11 +33,10 @@ public class PatientListActivity extends Activity {
 		
 		ListView patientsListView = (ListView) findViewById(R.id.patient_info_listView);
 		
-		ArrayList<String> patients = queryForPatients(essn);
+		ArrayList<String> patients = queryForPatientNames(essn);
 		
 		// Adapters are used to populate ListViews in Android
 		ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, patients);
-		
 		patientsListView.setAdapter(arrayAdapter);    
 	}
 
@@ -77,8 +76,11 @@ public class PatientListActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-
-				// Pass a new intent to ManagePatientsActivity once it's been written.
+				
+				Intent intent = new Intent(v.getContext(), ManagePatientsActivity.class);
+				intent.putExtra("ESSN", essn);
+				
+				startActivityForResult(intent, 0);
 				
 			}
 		});	
@@ -90,7 +92,7 @@ public class PatientListActivity extends Activity {
 		return db.getPssnsFromEssn(essn);	
 	}
 	
-	private ArrayList<String> queryForPatients(String essn) {
+	private ArrayList<String> queryForPatientNames(String essn) {
 		MindeRxDatabase db = new MindeRxDatabase(this);
 		
 		return db.getPatientNamesFromPssns(queryForPssns(essn));
