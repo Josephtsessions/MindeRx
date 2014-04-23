@@ -49,6 +49,5 @@
     <string name="title_activity_manage_patients">ManagePatientsActivity</string>
     <string name="title_activity_patient_info">PatientInfoActivity</string>
     <string name="title_activity_patient_tempature">PatientTempatureActivity</string>
-    <string />
 
 </resources>

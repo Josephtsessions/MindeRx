@@ -12,6 +12,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import database.MindeRxDatabase;
 
 public class PatientListActivity extends Activity {
@@ -24,6 +25,9 @@ public class PatientListActivity extends Activity {
 		
 		Bundle extras = getIntent().getExtras();
 		String essn = extras.getString("ESSN");
+		
+		TextView staffName = (TextView) this.findViewById(R.id.staff_name_label_patient_list);
+		staffName.setText( queryForStaffName(essn) );
 		
 		setupListeners(essn, queryForPssns(essn));	
 		
@@ -44,6 +48,12 @@ public class PatientListActivity extends Activity {
         getMenuInflater().inflate(R.menu.patient_list, menu);
         return true;
     }
+    
+	private String queryForStaffName(String essn) {
+		MindeRxDatabase db = new MindeRxDatabase(this);
+		
+		return db.getStaffNameFromEssn(essn);	
+	}
     
     private void setupListeners(final String essn, final ArrayList<String> pssns) {
 		

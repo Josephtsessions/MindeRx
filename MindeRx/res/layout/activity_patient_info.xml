@@ -64,20 +64,19 @@
         android:text="@string/blood_pressure" />
 
     <TextView
-        android:id="@+id/staff_name_label_sa02"
+        android:id="@+id/staff_name_label_patient_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/logout_bn"
-        android:layout_alignBottom="@+id/logout_bn"
+        android:layout_above="@+id/patient_name_label_patient_info"
         android:layout_alignLeft="@+id/submit_button"
         android:text="&lt;Staff Name Here>" />
 
     <TextView
-        android:id="@+id/patient_name_label"
+        android:id="@+id/patient_name_label_patient_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/staff_name_label_sa02"
-        android:layout_below="@+id/staff_name_label_sa02"
+        android:layout_above="@+id/blood_pressure_bn"
+        android:layout_alignLeft="@+id/staff_name_label_patient_info"
         android:text="&lt;Patient Name Here>" />
 
 </RelativeLayout> 

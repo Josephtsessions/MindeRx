@@ -157,27 +157,59 @@ public class MindeRxDatabase extends SQLiteOpenHelper {
 		
 		for (int i = 0; i < pssns.size(); i++) {
 
-			System.out.println(pssns.get(i));
+			System.out.println( pssns.get(i) );
 			
-			Cursor cursor = db.query("PATIENT", columns, "'" + pssns.get(i) + "' = pssn", null, null, null, null);
-
-			
-			if (cursor != null) {
-				while (cursor.moveToNext()) {
-					String firstName = cursor.getString(0);
-					String lastName = cursor.getString(1);
-				
-					String name = firstName + " " + lastName;
-				
-					names.add(name);
-				}
-			
-				cursor.close();
-			}
+			names.add(getPatientNameFromPssn( pssns.get(i) ) );
 			
 		}
 			
 		return names;		
+	}
+	
+	public String getPatientNameFromPssn(String pssn) {
+		SQLiteDatabase db = this.getReadableDatabase();
+		String[] columns = {"first", "last"};
+		
+		Cursor cursor = db.query("PATIENT", columns, "'" + pssn + "' = pssn", null, null, null, null);
+		
+		String name = "";
+		
+		if (cursor != null) {
+			cursor.moveToNext();
+			String firstName = cursor.getString(0);
+			String lastName = cursor.getString(1);
+			
+			name = firstName + " " + lastName;
+			
+		}
+
+		cursor.close();
+		
+		return name;
+		
+	}
+	
+	public String getStaffNameFromEssn(String essn) {
+		SQLiteDatabase db = this.getReadableDatabase();
+		String[] columns = {"first", "last"};
+		
+		Cursor cursor = db.query("EMPLOYEE", columns, "'" + essn + "' = essn", null, null, null, null);
+		
+		String name = "";
+		
+		if (cursor != null) {
+			cursor.moveToNext();
+			String firstName = cursor.getString(0);
+			String lastName = cursor.getString(1);
+			
+			name = firstName + " " + lastName;
+			
+		}
+		
+		cursor.close();
+		
+		return name;
+		
 	}
 	
 	private void setupSampleEmployees(SQLiteDatabase db) {		

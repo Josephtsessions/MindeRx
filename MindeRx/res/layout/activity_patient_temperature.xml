@@ -11,7 +11,7 @@
         android:id="@+id/submit_bn"
         android:layout_width="125dp"
         android:layout_height="40dp"
-        android:layout_alignLeft="@+id/staff_name_label_sa02"
+        android:layout_alignLeft="@+id/staff_name_label_patient_sa02"
         android:layout_below="@+id/Temperature_Num"
         android:layout_marginTop="80dp"
         android:background="#3300FF"
@@ -22,7 +22,7 @@
         android:id="@+id/Temperature_Num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/staff_name_label_sa02"
+        android:layout_below="@+id/staff_name_label_patient_sa02"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="72dp"
         android:ems="10"
@@ -33,7 +33,7 @@
     </EditText>
 
     <TextView
-        android:id="@+id/staff_name_label_sa02"
+        android:id="@+id/staff_name_label_patient_sa02"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -43,7 +43,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
-        android:id="@+id/staff_name_label_temperature"
+        android:id="@+id/staff_name_label_patient_temperature"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -53,11 +53,11 @@
         android:text="@string/staff_name_placeholder" />
 
     <TextView
-        android:id="@+id/patient_name_label_temperature"
+        android:id="@+id/patient_name_label_patient_temperature"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/staff_name_label_temperature"
-        android:layout_below="@+id/staff_name_label_temperature"
+        android:layout_alignLeft="@+id/staff_name_label_patient_temperature"
+        android:layout_below="@+id/staff_name_label_patient_temperature"
         android:text="@string/patient_name_placeholder" />
 
 </RelativeLayout>
