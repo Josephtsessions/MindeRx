@@ -3,9 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#7e7e7e"
-    tools:context="com.example.minderx.ManagePatientsActivity" 
-    tools:ignore="MergeRootFrame">
-    
+    tools:context="com.example.minderx.ManagePatientsActivity"
+    tools:ignore="MergeRootFrame" >
+
     <Button
         android:id="@+id/logout_bn"
         android:layout_width="100dp"
@@ -14,7 +14,7 @@
         android:layout_alignParentTop="true"
         android:background="#3300FF"
         android:text="@string/log_out" />
-    
+
     <ListView
         android:id="@+id/patient_manage_listView"
         android:layout_width="275dp"
@@ -24,37 +24,6 @@
         android:layout_marginTop="16dp" >
     </ListView>
 
-    <ListView
-        android:id="@+id/ListView01"
-        android:layout_width="275dp"
-        android:layout_height="150dp"
-        android:layout_alignLeft="@+id/patient_manage_listView"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="14dp" >
-    </ListView>
-
-    <Button
-        android:id="@+id/assign_to_bn"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/ListView01"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="14dp"
-        android:background="#3300FF"
-        android:text="@string/assign_to"
-        android:textSize="18sp" />
-
-    <Button
-        android:id="@+id/unassign_from_bn"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/assign_to_bn"
-        android:layout_alignBottom="@+id/assign_to_bn"
-        android:layout_alignParentLeft="true"
-        android:background="#FF0000"
-        android:text="@string/unassign_from"
-        android:textSize="18sp" />
-
     <TextView
         android:id="@+id/staff_name_label_manage_patients"
         android:layout_width="wrap_content"
@@ -63,5 +32,36 @@
         android:layout_alignBottom="@+id/logout_bn"
         android:layout_alignLeft="@+id/patient_manage_listView"
         android:text="@string/staff_name_placeholder" />
-    
+
+    <RadioGroup
+        android:id="@+id/radioOperation"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/patient_manage_listView"
+        android:layout_below="@+id/patient_manage_listView"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/assignToButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/assign_to" />
+
+        <RadioButton
+            android:id="@+id/unassignFromButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/unassign_from" />
+
+    </RadioGroup>
+
+    <ListView
+        android:id="@+id/ListView01"
+        android:layout_width="275dp"
+        android:layout_height="150dp"
+        android:layout_alignLeft="@+id/radioOperation"
+        android:layout_alignTop="@+id/radioOperation"
+        android:layout_marginTop="30dp" >
+    </ListView>
+
 </RelativeLayout>
