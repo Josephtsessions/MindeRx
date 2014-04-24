@@ -84,8 +84,6 @@ public class ManagePatientsActivity extends Activity {
 	}
 	
 	private void setupListeners(final ArrayList<String> pssns, final ArrayList<String> essns, final String floorNurseEssn) {
-		String patientToAssignPssn;
-		String staffToAssignEssn;
 		
 		final String[] pssn = {"0"};
 		final String[] essn = {"0"};
@@ -124,8 +122,10 @@ public class ManagePatientsActivity extends Activity {
 				    String selection = (String) btn.getText();
 				    
 				    if ( selection.equals("Assign To") ) {
+				    	assignPatientToStaff(pssn[0], essn[0], floorNurseEssn);
 						Toast.makeText(v.getContext(), "Assign To", Toast.LENGTH_LONG).show();									    	
 				    } else if ( selection.equals("Unassign From") ) {
+				    	unassignPatientFromStaff(pssn[0], essn[0], floorNurseEssn);
 						Toast.makeText(v.getContext(), "Unassign From", Toast.LENGTH_LONG).show();									    	
 				    }
 				    
@@ -136,4 +136,17 @@ public class ManagePatientsActivity extends Activity {
 			}
 		});	
 	}
+	
+	private void assignPatientToStaff(String pssn, String essn, String floorNurseEssn) {
+		MindeRxDatabase db = new MindeRxDatabase(this);
+		
+		db.assignPatientToStaff(pssn, essn, floorNurseEssn);
+	}
+	
+	private void unassignPatientFromStaff(String pssn, String essn, String floorNurseEssn) {
+		MindeRxDatabase db = new MindeRxDatabase(this);
+		
+		db.unassignPatientFromStaff(pssn, essn, floorNurseEssn);
+	}
+	
 }

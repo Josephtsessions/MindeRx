@@ -392,6 +392,23 @@ public class MindeRxDatabase extends SQLiteOpenHelper {
 		db.close();
 	}
 	
+	public void assignPatientToStaff(String pssn, String essn, String floorNurseEssn) {
+		SQLiteDatabase db = this.getWritableDatabase();
+		
+		ContentValues newAssignment = new ContentValues();
+		newAssignment.put("pssn", pssn);
+		newAssignment.put("essn", essn);
+		newAssignment.put("floor_nurse_essn", floorNurseEssn);
+		
+		db.insert("assignment", null, newAssignment);		
+	}
+	
+	public void unassignPatientFromStaff(String pssn, String essn, String floorNurseEssn) {
+		SQLiteDatabase db = this.getWritableDatabase();
+		
+		db.delete("assignment", "pssn=" + pssn + " and " + "essn=" + essn + "and" + " floor_nurse_essn=" + floorNurseEssn, null);
+	}
+	
 	private void setupSampleEmployees(SQLiteDatabase db) {		
 		ContentValues bob = new ContentValues();
 		bob.put("essn", "123-45-6789");
