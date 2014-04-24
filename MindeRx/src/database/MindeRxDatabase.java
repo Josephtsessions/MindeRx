@@ -408,11 +408,11 @@ public class MindeRxDatabase extends SQLiteOpenHelper {
 		rick.put("password", "mayo");
 		
 		ContentValues a = new ContentValues();
-		rick.put("essn", "832-23-5531");
-		rick.put("first", "Dr.");
-		rick.put("last", "Evil");
-		rick.put("username", "a");
-		rick.put("password", "a");
+		a.put("essn", "832-23-5531");
+		a.put("first", "Dr.");
+		a.put("last", "Evil");
+		a.put("username", "a");
+		a.put("password", "a");
 		
 		db.insert("employee", null, bob);
 		db.insert("employee", null, rick);
