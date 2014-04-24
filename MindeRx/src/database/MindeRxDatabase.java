@@ -393,14 +393,26 @@ public class MindeRxDatabase extends SQLiteOpenHelper {
 	}
 	
 	public void assignPatientToStaff(String pssn, String essn, String floorNurseEssn) {
-		SQLiteDatabase db = this.getWritableDatabase();
+		SQLiteDatabase db = this.getReadableDatabase();
+		String[] columns = {"pssn", "essn"};
 		
-		ContentValues newAssignment = new ContentValues();
-		newAssignment.put("pssn", pssn);
-		newAssignment.put("essn", essn);
-		newAssignment.put("floor_nurse_essn", floorNurseEssn);
-		
-		db.insert("assignment", null, newAssignment);		
+		Cursor cursor = db.query("assignment", columns, "pssn='" + pssn + "' and " + "essn='" + essn + "'", null, null, null, null);
+
+		if (cursor.getCount() == 0) { // If the assignment is unique and has not already been made
+
+			db = this.getWritableDatabase();
+			
+			ContentValues newAssignment = new ContentValues();
+			newAssignment.put("pssn", pssn);
+			newAssignment.put("essn", essn);
+			newAssignment.put("floor_nurse_essn", floorNurseEssn);
+			
+			db.insert("assignment", null, newAssignment);		
+			
+		}
+				
+		cursor.close();
+		db.close();
 	}
 	
 	public void unassignPatientFromStaff(String pssn, String essn) {
