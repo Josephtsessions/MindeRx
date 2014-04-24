@@ -125,7 +125,7 @@ public class ManagePatientsActivity extends Activity {
 				    	assignPatientToStaff(pssn[0], essn[0], floorNurseEssn);
 						Toast.makeText(v.getContext(), "Assign To", Toast.LENGTH_LONG).show();									    	
 				    } else if ( selection.equals("Unassign From") ) {
-				    	unassignPatientFromStaff(pssn[0], essn[0], floorNurseEssn);
+				    	unassignPatientFromStaff(pssn[0], essn[0]);
 						Toast.makeText(v.getContext(), "Unassign From", Toast.LENGTH_LONG).show();									    	
 				    }
 				    
@@ -143,10 +143,10 @@ public class ManagePatientsActivity extends Activity {
 		db.assignPatientToStaff(pssn, essn, floorNurseEssn);
 	}
 	
-	private void unassignPatientFromStaff(String pssn, String essn, String floorNurseEssn) {
+	private void unassignPatientFromStaff(String pssn, String essn) {
 		MindeRxDatabase db = new MindeRxDatabase(this);
 		
-		db.unassignPatientFromStaff(pssn, essn, floorNurseEssn);
+		db.unassignPatientFromStaff(pssn, essn);
 	}
 	
 }
