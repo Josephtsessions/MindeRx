@@ -8,7 +8,7 @@
 
     <Button
         android:id="@+id/logout_bn"
-        android:layout_width="100dp"
+        android:layout_width="125dp"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
@@ -18,7 +18,7 @@
     <ListView
         android:id="@+id/patient_manage_listView"
         android:layout_width="275dp"
-        android:layout_height="150dp"
+        android:layout_height="125dp"
         android:layout_below="@+id/logout_bn"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp" >
@@ -33,12 +33,23 @@
         android:layout_alignLeft="@+id/patient_manage_listView"
         android:text="@string/staff_name_placeholder" />
 
+    <Button
+        android:id="@+id/submit_bn"
+        android:layout_width="125dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:background="#3300FF"
+        android:text="@string/submit"
+        android:textSize="25sp" />
+
     <RadioGroup
         android:id="@+id/radioOperation"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_alignLeft="@+id/patient_manage_listView"
-        android:layout_below="@+id/patient_manage_listView"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:orientation="horizontal" >
 
         <RadioButton
@@ -52,16 +63,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/unassign_from" />
-
     </RadioGroup>
 
     <ListView
         android:id="@+id/staff_manage_listView"
         android:layout_width="275dp"
-        android:layout_height="150dp"
-        android:layout_alignLeft="@+id/radioOperation"
-        android:layout_alignTop="@+id/radioOperation"
-        android:layout_marginTop="30dp" >
+        android:layout_height="100dp"
+        android:layout_alignLeft="@+id/patient_manage_listView"
+        android:layout_below="@+id/radioOperation"
+        android:layout_marginTop="15dp" >
     </ListView>
 
 </RelativeLayout>
