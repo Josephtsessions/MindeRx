@@ -15,96 +15,6 @@
         android:background="#3300FF"
         android:text="@string/log_out" />
 
-    <ToggleButton
-        android:id="@+id/pulse_toggle_bn"
-        android:layout_width="75dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/bp_toggle_bn"
-        android:layout_alignBottom="@+id/bp_toggle_bn"
-        android:layout_centerHorizontal="true"
-        android:text="@string/pulse" 
-        android:onClick="pulseGraphHandler"/>
-
-    <ToggleButton
-        android:id="@+id/sao2_toggle_bn"
-        android:layout_width="75dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/pulse_toggle_bn"
-        android:layout_alignBottom="@+id/pulse_toggle_bn"
-        android:layout_alignLeft="@+id/logout_bn"
-        android:text="@string/sao2" 
-        android:onClick="sao2GraphHandler"/>
-
-    <ToggleButton
-        android:id="@+id/resp_toggle_bn"
-        android:layout_width="75dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/temp_toggle_bn"
-        android:layout_alignBottom="@+id/temp_toggle_bn"
-        android:layout_toRightOf="@+id/bp_toggle_bn"
-        android:text="@string/resp" 
-        android:onClick="respGraphHandler"/>
-
-    <ToggleButton
-        android:id="@+id/i_o_toggle_bn"
-        android:layout_width="75dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/resp_toggle_bn"
-        android:layout_alignBottom="@+id/resp_toggle_bn"
-        android:layout_alignLeft="@+id/sao2_toggle_bn"
-        android:text="@string/i_o" />
-
-    <ToggleButton
-        android:id="@+id/temp_toggle_bn"
-        android:layout_width="75dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/bp_toggle_bn"
-        android:layout_below="@+id/pulse_toggle_bn"
-        android:layout_marginTop="19dp"
-        android:text="@string/temp" 
-        android:onClick="tempGraphHandler"/>
-
-    <ToggleButton
-        android:id="@+id/bp_toggle_bn"
-        android:layout_width="75dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="126dp"
-        android:layout_marginRight="17dp"
-        android:layout_toLeftOf="@+id/pulse_toggle_bn"
-        android:text="@string/blood_pressure"
-        android:onClick="bpGraphHandler" />
-
-    <EditText
-        android:id="@+id/end_date_txt"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/start_date_txt"
-        android:layout_alignBottom="@+id/start_date_txt"
-        android:layout_alignRight="@+id/sao2_toggle_bn"
-        android:ems="10"
-        android:inputType="date" >
-
-        <requestFocus />
-    </EditText>
-
-    <Button
-        android:id="@+id/done_bn"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="@string/graph_done" />
-
-    <EditText
-        android:id="@+id/start_date_txt"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/bp_toggle_bn"
-        android:layout_below="@+id/logout_bn"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:inputType="date" />
 
     <TextView
         android:id="@+id/patient_name_label_graph_patient_info"
@@ -123,5 +33,73 @@
         android:layout_marginLeft="19dp"
         android:layout_marginTop="16dp"
         android:text="@string/staff_name_placeholder" />
+
+    <EditText
+        android:id="@+id/end_date_txt"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/start_date_txt"
+        android:layout_alignBottom="@+id/start_date_txt"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="32dp"
+        android:ems="10"
+        android:inputType="date" />
+
+    <EditText
+        android:id="@+id/start_date_txt"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/patient_name_label_graph_patient_info"
+        android:layout_below="@+id/patient_name_label_graph_patient_info"
+        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:inputType="date" />
+
+    <Button
+        android:id="@+id/graph_bn"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="125dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="28dp"
+        android:layout_toLeftOf="@+id/logout_bn"
+        android:background="#00CC66"
+        android:onClick="lineGraphHandler"
+        android:text="@string/graph_patient_info" />
+
+    <CheckBox
+        android:id="@+id/heart_rate_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/graph_bn"
+        android:layout_alignRight="@+id/graph_bn"
+        android:layout_marginBottom="51dp"
+        android:text="@string/heart_rate" />
+
+    <CheckBox
+        android:id="@+id/pulse_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/heart_rate_checkBox"
+        android:layout_marginBottom="15dp"
+        android:layout_toRightOf="@+id/start_date_txt"
+        android:text="@string/pulse" />
+
+    <CheckBox
+        android:id="@+id/temp_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/heart_rate_checkBox"
+        android:layout_centerVertical="true"
+        android:text="@string/temp" />
+
+    <CheckBox
+        android:id="@+id/bp_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/temp_checkBox"
+        android:layout_alignLeft="@+id/graph_bn"
+        android:layout_marginBottom="23dp"
+        android:text="@string/blood_pressure" />
 
 </RelativeLayout>
