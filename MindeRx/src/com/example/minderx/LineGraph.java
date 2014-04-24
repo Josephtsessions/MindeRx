@@ -140,7 +140,7 @@ public class LineGraph{
 //		renderer3.setPointStyle(PointStyle.DIAMOND);
 //		renderer3.setFillPoints(true);
 		
-		Intent intent = ChartFactory.getLineChartIntent(context, dataset, mRenderer, "Line Graph Title");
+		Intent intent = ChartFactory.getLineChartIntent(context, dataset, mRenderer, "Patient Vital Chart");
 		return intent;
 		
 	}

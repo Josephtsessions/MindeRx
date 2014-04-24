@@ -16,7 +16,6 @@
         <activity
             android:name="com.example.minderx.LoginActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/app_name"
             android:theme="@style/FullscreenTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,40 +24,31 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.minderx.PatientListActivity"
-            android:label="@string/title_activity_patient_list" >
+            android:name="com.example.minderx.PatientListActivity">
         </activity>
         <activity
-            android:name="com.example.minderx.PatientInfoActivity"
-            android:label="@string/title_activity_patient_info" >
+            android:name="com.example.minderx.PatientInfoActivity">
         </activity>
         <activity
-            android:name="com.example.minderx.PatientBloodPressureActivity"
-            android:label="@string/title_activity_patient_blood_pressure" >
+            android:name="com.example.minderx.PatientBloodPressureActivity" >
         </activity>
         <activity
-            android:name="com.example.minderx.PatientHeartRateActivity"
-            android:label="@string/title_activity_patient_heart_rate" >
+            android:name="com.example.minderx.PatientHeartRateActivity" >
         </activity>
         <activity
-            android:name="com.example.minderx.PatientSaLevelActivity"
-            android:label="@string/title_activity_patient_sa_level" >
+            android:name="com.example.minderx.PatientSaLevelActivity" >
         </activity>
         <activity
-            android:name="com.example.minderx.GraphPatientInfoActivity"
-            android:label="@string/title_activity_graph_patient_info" >
+            android:name="com.example.minderx.GraphPatientInfoActivity" >
         </activity>
         <activity
-            android:name="com.example.minderx.ManagePatientsActivity"
-            android:label="@string/title_activity_manage_patients" >
+            android:name="com.example.minderx.ManagePatientsActivity" >
         </activity>
         <activity
-            android:name="com.example.minderx.PatientTemperatureActivity"
-            android:label="@string/title_activity_patient_tempature" >
+            android:name="com.example.minderx.PatientTemperatureActivity" >
         </activity>
         <activity
-            android:name="com.example.minderx.VitalsActivity"
-            android:label="@string/title_activity_vitals" >
+            android:name="com.example.minderx.VitalsActivity">
         </activity>
         <activity android:name="org.achartengine.GraphicalActivity" />
     </application>
