@@ -61,45 +61,45 @@
         android:layout_width="125dp"
         android:layout_height="40dp"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="28dp"
-        android:layout_toLeftOf="@+id/logout_bn"
         android:background="#00CC66"
         android:onClick="lineGraphHandler"
         android:text="@string/graph_patient_info" />
 
     <CheckBox
-        android:id="@+id/heart_rate_checkBox"
+        android:id="@+id/temp_checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/graph_bn"
-        android:layout_alignRight="@+id/graph_bn"
-        android:layout_marginBottom="51dp"
-        android:text="@string/heart_rate" />
+        android:layout_alignLeft="@+id/pulse_checkBox"
+        android:layout_centerVertical="true"
+        android:text="@string/temperature" />
 
     <CheckBox
         android:id="@+id/pulse_checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/heart_rate_checkBox"
-        android:layout_marginBottom="15dp"
-        android:layout_toRightOf="@+id/start_date_txt"
+        android:layout_alignLeft="@+id/heart_rate_checkBox"
+        android:layout_below="@+id/temp_checkBox"
+        android:layout_marginTop="19dp"
         android:text="@string/pulse" />
 
     <CheckBox
-        android:id="@+id/temp_checkBox"
+        android:id="@+id/heart_rate_checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/heart_rate_checkBox"
-        android:layout_centerVertical="true"
-        android:text="@string/temperature" />
+        android:layout_alignLeft="@+id/bp_checkBox"
+        android:layout_below="@+id/pulse_checkBox"
+        android:layout_marginTop="19dp"
+        android:text="@string/heart_rate" />
 
     <CheckBox
         android:id="@+id/bp_checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/temp_checkBox"
-        android:layout_alignLeft="@+id/graph_bn"
-        android:layout_marginBottom="23dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="19dp"
         android:text="@string/blood_pressure" />
 
 </RelativeLayout>
