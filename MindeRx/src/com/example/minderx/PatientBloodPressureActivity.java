@@ -51,7 +51,7 @@ public class PatientBloodPressureActivity extends Activity {
     }
     
 	private void setupListeners(final String essn, final String pssn) {
-		final Button submitBn =  (Button) this.findViewById(R.id.submit_bn);
+		final Button submitBn =  (Button) this.findViewById(R.id.submit_button);
 		final EditText systolicField = (EditText) this.findViewById(R.id.systolicField); // Temperature num needs to be changed - Doesn't match HeartRateActivity
 		final EditText diastolicField = (EditText) this.findViewById(R.id.diastolicField);
 		
