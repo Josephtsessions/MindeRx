@@ -3,7 +3,6 @@ package com.example.minderx;
 import java.util.ArrayList;
 
 import database.MindeRxDatabase;
-import android.R;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
