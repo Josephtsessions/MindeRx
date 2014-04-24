@@ -30,9 +30,10 @@
         android:id="@+id/radioOperation"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_centerHorizontal="true"
+        android:layout_alignLeft="@+id/staff_name_label_manage_patients"
         android:layout_centerVertical="true"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true" >
 
         <RadioButton
             android:id="@+id/assignToButton"
@@ -45,7 +46,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/unassign_from" />
+
     </RadioGroup>
+
+    <Spinner
+        android:id="@+id/patientsSpinner"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/radioOperation"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp" />
 
     <TextView
         android:id="@+id/staff_name_label_manage_patients"
@@ -53,23 +63,16 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/logout_bn"
         android:layout_alignBottom="@+id/logout_bn"
-        android:layout_alignLeft="@+id/patientsSpinner"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="18dp"
         android:text="@string/staff_name_placeholder" />
 
     <Spinner
-        android:id="@+id/patientsSpinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/radioOperation"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="41dp" />
-
-    <Spinner
         android:id="@+id/staffSpinner"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/submit_bn"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="35dp" />
+        android:layout_alignLeft="@+id/patientsSpinner"
+        android:layout_below="@+id/radioOperation"
+        android:layout_marginTop="30dp" />
 
 </RelativeLayout>
