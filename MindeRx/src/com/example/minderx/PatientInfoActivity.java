@@ -28,7 +28,8 @@ public class PatientInfoActivity extends Activity {
 		setupListeners(R.id.blood_pressure_bn, PatientBloodPressureActivity.class, essn, pssn);
 		setupListeners(R.id.heart_rate_bn    , PatientHeartRateActivity.class, essn, pssn);
 		setupListeners(R.id.o2_sat_lvl_bn    , PatientSaLevelActivity.class, essn, pssn);
-		setupListeners(R.id.temperature_bn   , PatientTemperatureActivity.class, essn, pssn);	
+		setupListeners(R.id.temperature_bn   , PatientTemperatureActivity.class, essn, pssn);
+		setupListeners(R.id.submit_button	 , GraphPatientInfoActivity.class, essn, pssn);
 
 	}
 
