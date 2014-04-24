@@ -35,13 +35,13 @@
         android:text="@string/manage_patients" />
 
     <TextView
-        android:id="@+id/staff_name_label_patient_list"
+        android:id="@+id/staff_name_label_patient_list"        
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/logout_bn"
-        android:layout_alignBottom="@+id/logout_bn"
-        android:layout_alignLeft="@+id/ManagePatient_bn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
         android:layout_marginLeft="19dp"
+        android:layout_marginTop="16dp"
         android:text="@string/staff_name_placeholder" />
 
 </RelativeLayout>
