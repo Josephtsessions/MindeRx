@@ -2,12 +2,13 @@ package com.example.minderx;
 
 import java.util.ArrayList;
 
-import database.MindeRxDatabase;
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.Menu;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.Spinner;
+import android.widget.TextView;
+import database.MindeRxDatabase;
 
 public class ManagePatientsActivity extends Activity {
 
@@ -18,19 +19,22 @@ public class ManagePatientsActivity extends Activity {
         
 		Bundle extras = getIntent().getExtras();
 		String essn = extras.getString("ESSN");
+		
+		TextView staffName = (TextView) this.findViewById(R.id.staff_name_label_patient_info);
+		staffName.setText( queryForStaffName(essn) );
         
-		ListView patientsListView = (ListView) findViewById(R.id.patient_manage_listView);
-		ListView staffListView = (ListView) findViewById(R.id.staff_manage_listView);
+		Spinner patientsSpinner = (Spinner) findViewById(R.id.patientsSpinner);
+		Spinner staffSpinner = (Spinner) findViewById(R.id.staffSpinner);
 		
 		ArrayList<String> patients = queryForPatientNames(essn);
 		ArrayList<String> staff = queryForStaffNames();
 		
 		// Adapters are used to populate ListViews in Android
-		ArrayAdapter<String> patientAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, patients);
-		patientsListView.setAdapter(patientAdapter);    
+		ArrayAdapter<String> patientAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, patients);
+		patientsSpinner.setAdapter(patientAdapter);    
 		
-		ArrayAdapter<String> staffAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, staff);
-		staffListView.setAdapter(staffAdapter);    
+		ArrayAdapter<String> staffAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, staff);
+		staffSpinner.setAdapter(staffAdapter);    
     }
 
 
@@ -41,6 +45,12 @@ public class ManagePatientsActivity extends Activity {
         return true;
     }
 	
+    private String queryForStaffName(String essn) {
+		MindeRxDatabase db = new MindeRxDatabase(this);
+		
+		return db.getStaffNameFromEssn(essn);	
+	}
+    
     private ArrayList<String> queryForPssns(String essn) {
 		MindeRxDatabase db = new MindeRxDatabase(this);
 		

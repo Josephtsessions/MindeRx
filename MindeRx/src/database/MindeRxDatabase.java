@@ -460,10 +460,22 @@ public class MindeRxDatabase extends SQLiteOpenHelper {
 		coryAssign.put("essn", "123-45-6789");
 		coryAssign.put("floor_nurse_essn", "123-45-6789");
 		
+		ContentValues beep = new ContentValues();
+		beep.put("pssn", "564-11-1644");
+		beep.put("first", "Beep");
+		beep.put("last", "Bop");
+		
+		ContentValues salad = new ContentValues();
+		salad.put("pssn", "584-12-1184");
+		salad.put("first", "Salad");
+		salad.put("last", "isCold");
+		
 		db.insert("patient", null, sara);
 		db.insert("patient", null, jeff);
 		db.insert("patient", null, tom);
 		db.insert("patient", null, cory);
+		db.insert("patient", null, beep);
+		db.insert("patient", null, salad);
 		
 		db.insert("assignment", null, saraAssign);
 		db.insert("assignment", null, jeffAssign);

@@ -15,24 +15,6 @@
         android:background="#3300FF"
         android:text="@string/log_out" />
 
-    <ListView
-        android:id="@+id/patient_manage_listView"
-        android:layout_width="275dp"
-        android:layout_height="125dp"
-        android:layout_below="@+id/logout_bn"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp" >
-    </ListView>
-
-    <TextView
-        android:id="@+id/staff_name_label_manage_patients"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/logout_bn"
-        android:layout_alignBottom="@+id/logout_bn"
-        android:layout_alignLeft="@+id/patient_manage_listView"
-        android:text="@string/staff_name_placeholder" />
-
     <Button
         android:id="@+id/submit_bn"
         android:layout_width="125dp"
@@ -65,13 +47,29 @@
             android:text="@string/unassign_from" />
     </RadioGroup>
 
-    <ListView
-        android:id="@+id/staff_manage_listView"
-        android:layout_width="275dp"
-        android:layout_height="100dp"
-        android:layout_alignLeft="@+id/patient_manage_listView"
-        android:layout_below="@+id/radioOperation"
-        android:layout_marginTop="15dp" >
-    </ListView>
+    <TextView
+        android:id="@+id/staff_name_label_manage_patients"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/logout_bn"
+        android:layout_alignBottom="@+id/logout_bn"
+        android:layout_alignLeft="@+id/patientsSpinner"
+        android:text="@string/staff_name_placeholder" />
+
+    <Spinner
+        android:id="@+id/patientsSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/radioOperation"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="41dp" />
+
+    <Spinner
+        android:id="@+id/staffSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/submit_bn"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="35dp" />
 
 </RelativeLayout>
