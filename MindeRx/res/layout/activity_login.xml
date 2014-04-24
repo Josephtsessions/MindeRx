@@ -18,20 +18,6 @@
     -->
 
 	    <EditText
-	        android:id="@+id/username_txt"
-	        android:layout_width="216dp"
-	        android:layout_height="35dp"
-	        android:layout_alignParentTop="true"
-	        android:layout_centerHorizontal="true"
-	        android:layout_marginTop="128dp"
-	        android:background="#eeeeee"
-	        android:ems="10"
-	        android:hint="@string/hint_txt_username"
-	        android:inputType="textPersonName"
-	        android:singleLine="false"
-	        android:textColor="#666666" />
-
-	    <EditText
 	        android:id="@+id/password_txt"
 	        android:layout_width="216dp"
 	        android:layout_height="35dp"
@@ -56,5 +42,28 @@
 	        android:text="@string/submit"
 	        android:textColor="#666666"
 	        android:textStyle="bold" />
+
+	    <EditText
+	        android:id="@+id/username_txt"
+	        android:layout_width="216dp"
+	        android:layout_height="35dp"
+	        android:layout_below="@+id/imageView1"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="54dp"
+	        android:background="#eeeeee"
+	        android:ems="10"
+	        android:hint="@string/hint_txt_username"
+	        android:inputType="textPersonName"
+	        android:singleLine="false"
+	        android:textColor="#666666" />
+
+	    <ImageView
+	        android:id="@+id/imageView1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentTop="true"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="90dp"
+	        android:src="@drawable/minderx_logo" />
 
 </RelativeLayout>
