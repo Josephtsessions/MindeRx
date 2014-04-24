@@ -20,7 +20,7 @@ public class ManagePatientsActivity extends Activity {
 		Bundle extras = getIntent().getExtras();
 		String essn = extras.getString("ESSN");
 		
-		TextView staffName = (TextView) this.findViewById(R.id.staff_name_label_patient_info);
+		TextView staffName = (TextView) this.findViewById(R.id.staff_name_label_manage_patients);
 		staffName.setText( queryForStaffName(essn) );
         
 		Spinner patientsSpinner = (Spinner) findViewById(R.id.patientsSpinner);
