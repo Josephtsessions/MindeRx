@@ -36,17 +36,18 @@
         android:id="@+id/patient_name_label_patient_heart_rate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_below="@+id/staff_name_label_patient_heart_rate"
-        android:layout_marginLeft="16dp"
+        android:layout_alignLeft="@+id/staff_name_label_patient_heart_rate"
         android:text="@string/patient_name_placeholder" />
+    
 
     <TextView
         android:id="@+id/staff_name_label_patient_heart_rate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/patient_name_label_patient_heart_rate"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:layout_marginLeft="19dp"
         android:layout_marginTop="16dp"
         android:text="@string/staff_name_placeholder" />
 

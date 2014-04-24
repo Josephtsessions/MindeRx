@@ -3,6 +3,7 @@ package com.example.minderx;
 
 import com.example.minderx.PatientListActivity;
 
+import android.R;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;

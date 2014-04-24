@@ -2,6 +2,7 @@ package com.example.minderx;
 
 import java.util.ArrayList;
 
+import android.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

@@ -22,7 +22,8 @@
         android:layout_alignBaseline="@+id/bp_toggle_bn"
         android:layout_alignBottom="@+id/bp_toggle_bn"
         android:layout_centerHorizontal="true"
-        android:text="@string/pulse" />
+        android:text="@string/pulse" 
+        android:onClick="pulseGraphHandler"/>
 
     <ToggleButton
         android:id="@+id/sao2_toggle_bn"
@@ -31,7 +32,8 @@
         android:layout_alignBaseline="@+id/pulse_toggle_bn"
         android:layout_alignBottom="@+id/pulse_toggle_bn"
         android:layout_alignLeft="@+id/logout_bn"
-        android:text="@string/sao2" />
+        android:text="@string/sao2" 
+        android:onClick="sao2GraphHandler"/>
 
     <ToggleButton
         android:id="@+id/resp_toggle_bn"
@@ -40,7 +42,8 @@
         android:layout_alignBaseline="@+id/temp_toggle_bn"
         android:layout_alignBottom="@+id/temp_toggle_bn"
         android:layout_toRightOf="@+id/bp_toggle_bn"
-        android:text="@string/resp" />
+        android:text="@string/resp" 
+        android:onClick="respGraphHandler"/>
 
     <ToggleButton
         android:id="@+id/i_o_toggle_bn"
@@ -58,7 +61,8 @@
         android:layout_alignLeft="@+id/bp_toggle_bn"
         android:layout_below="@+id/pulse_toggle_bn"
         android:layout_marginTop="19dp"
-        android:text="@string/temp" />
+        android:text="@string/temp" 
+        android:onClick="tempGraphHandler"/>
 
     <ToggleButton
         android:id="@+id/bp_toggle_bn"
@@ -68,7 +72,8 @@
         android:layout_marginBottom="126dp"
         android:layout_marginRight="17dp"
         android:layout_toLeftOf="@+id/pulse_toggle_bn"
-        android:text="@string/blood_pressure" />
+        android:text="@string/blood_pressure"
+        android:onClick="bpGraphHandler" />
 
     <EditText
         android:id="@+id/end_date_txt"
@@ -102,20 +107,21 @@
         android:inputType="date" />
 
     <TextView
-        android:id="@+id/staff_name_label_graph_patient_info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/logout_bn"
-        android:layout_alignBottom="@+id/logout_bn"
-        android:layout_toLeftOf="@+id/pulse_toggle_bn"
-        android:text="@string/staff_name_placeholder" />
-
-    <TextView
         android:id="@+id/patient_name_label_graph_patient_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/start_date_txt"
+        android:layout_below="@+id/staff_name_label_graph_patient_info"
         android:layout_alignLeft="@+id/staff_name_label_graph_patient_info"
         android:text="@string/patient_name_placeholder" />
+
+    <TextView
+        android:id="@+id/staff_name_label_graph_patient_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/staff_name_placeholder" />
 
 </RelativeLayout>

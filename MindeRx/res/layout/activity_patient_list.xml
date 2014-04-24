@@ -41,6 +41,7 @@
         android:layout_alignBaseline="@+id/logout_bn"
         android:layout_alignBottom="@+id/logout_bn"
         android:layout_alignLeft="@+id/ManagePatient_bn"
+        android:layout_marginLeft="19dp"
         android:text="@string/staff_name_placeholder" />
 
 </RelativeLayout>

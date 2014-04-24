@@ -1,5 +1,6 @@
 package com.example.minderx;
 
+import android.R;
 import android.app.Activity;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
