@@ -6,6 +6,8 @@ import database.MindeRxDatabase;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 public class ManagePatientsActivity extends Activity {
 
@@ -13,6 +15,22 @@ public class ManagePatientsActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_patients);
+        
+		Bundle extras = getIntent().getExtras();
+		String essn = extras.getString("ESSN");
+        
+		ListView patientsListView = (ListView) findViewById(R.id.patient_manage_listView);
+		ListView staffListView = (ListView) findViewById(R.id.staff_manage_listView);
+		
+		ArrayList<String> patients = queryForPatientNames(essn);
+		ArrayList<String> staff = queryForStaffNames();
+		
+		// Adapters are used to populate ListViews in Android
+		ArrayAdapter<String> patientAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, patients);
+		patientsListView.setAdapter(patientAdapter);    
+		
+		ArrayAdapter<String> staffAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, staff);
+		staffListView.setAdapter(staffAdapter);    
     }
 
 
