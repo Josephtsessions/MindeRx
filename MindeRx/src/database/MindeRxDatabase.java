@@ -407,8 +407,16 @@ public class MindeRxDatabase extends SQLiteOpenHelper {
 		rick.put("username", "Rbrown");
 		rick.put("password", "mayo");
 		
+		ContentValues a = new ContentValues();
+		rick.put("essn", "832-23-5531");
+		rick.put("first", "Dr.");
+		rick.put("last", "Evil");
+		rick.put("username", "a");
+		rick.put("password", "a");
+		
 		db.insert("employee", null, bob);
 		db.insert("employee", null, rick);
+		db.insert("employee", null, a);
 	}
 	
 	private void setupSamplePatients(SQLiteDatabase db) {
