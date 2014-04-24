@@ -60,6 +60,7 @@
             android:name="com.example.minderx.VitalsActivity"
             android:label="@string/title_activity_vitals" >
         </activity>
+        <activity android:name="org.achartengine.GraphicalActivity" />
     </application>
 
 </manifest>
