@@ -84,6 +84,19 @@ public class PatientListActivity extends Activity {
 				
 			}
 		});	
+		
+		final Button logoutButton = (Button) this.findViewById(R.id.logout_bn);
+		logoutButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				Intent intent = new Intent(v.getContext(), LoginActivity.class);
+				intent.setFlags(android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(intent);
+				
+			}
+		});
 	}
 	
 	private ArrayList<String> queryForPssns(String essn) {

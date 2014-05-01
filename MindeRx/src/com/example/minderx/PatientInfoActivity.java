@@ -25,12 +25,8 @@ public class PatientInfoActivity extends Activity {
 		staffName.setText( queryForStaffName(essn) );
 		patientName.setText( queryForPatientName(pssn) );
 
-		setupListeners(R.id.blood_pressure_bn, PatientBloodPressureActivity.class, essn, pssn);
-		setupListeners(R.id.heart_rate_bn    , PatientHeartRateActivity.class, essn, pssn);
-		setupListeners(R.id.o2_sat_lvl_bn    , PatientSaLevelActivity.class, essn, pssn);
-		setupListeners(R.id.temperature_bn   , PatientTemperatureActivity.class, essn, pssn);
-		setupListeners(R.id.submit_button	 , GraphPatientInfoActivity.class, essn, pssn);
-
+		setupListeners(essn, pssn);
+		
 	}
 
 	private String queryForPatientName(String pssn) {
@@ -45,7 +41,30 @@ public class PatientInfoActivity extends Activity {
 		return db.getStaffNameFromEssn(essn);	
 	}
 	
-	private void setupListeners(int rID, final Class<?> activity, final String essn, final String pssn) {
+	private void setupListeners(String essn, String pssn) {
+		
+		setupIntentButton(R.id.blood_pressure_bn, PatientBloodPressureActivity.class, essn, pssn);
+		setupIntentButton(R.id.heart_rate_bn    , PatientHeartRateActivity.class, essn, pssn);
+		setupIntentButton(R.id.o2_sat_lvl_bn    , PatientSaLevelActivity.class, essn, pssn);
+		setupIntentButton(R.id.temperature_bn   , PatientTemperatureActivity.class, essn, pssn);
+		setupIntentButton(R.id.submit_button	 , GraphPatientInfoActivity.class, essn, pssn);
+
+		final Button logoutButton = (Button) this.findViewById(R.id.logout_bn);
+		logoutButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				Intent intent = new Intent(v.getContext(), LoginActivity.class);
+				intent.setFlags(android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(intent);
+				
+			}
+		});
+		
+	}
+	
+	private void setupIntentButton(int rID, final Class<?> activity, final String essn, final String pssn) {
 		final Button b = (Button) this.findViewById(rID);
 		b.setOnClickListener(new View.OnClickListener() {
 

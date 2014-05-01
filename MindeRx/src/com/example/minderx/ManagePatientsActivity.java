@@ -3,6 +3,7 @@ package com.example.minderx;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -135,6 +136,19 @@ public class ManagePatientsActivity extends Activity {
 			
 			}
 		});	
+		
+		final Button logoutButton = (Button) this.findViewById(R.id.logout_bn);
+		logoutButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				Intent intent = new Intent(v.getContext(), LoginActivity.class);
+				intent.setFlags(android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(intent);
+				
+			}
+		});
 	}
 	
 	private void assignPatientToStaff(String pssn, String essn, String floorNurseEssn) {
